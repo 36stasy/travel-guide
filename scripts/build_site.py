@@ -110,6 +110,23 @@ dl.facts div{background:var(--bg-soft);padding:12px 15px;border-radius:10px}
 dl.facts dt{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.07em}
 dl.facts dd{margin:4px 0 0}
 .back{display:inline-block;margin:26px 0 0;color:var(--ink-dim);font-size:14px}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
+  margin:24px 0 4px}
+.col{background:linear-gradient(135deg,var(--accent-soft),var(--card));border:1px solid var(--accent);
+  border-radius:var(--radius);padding:16px 18px;display:block;transition:transform .18s}
+.col:hover{transform:translateY(-3px);text-decoration:none}
+.col b{display:block;font-family:var(--serif);font-size:19px;color:var(--ink);font-weight:400;
+  margin-bottom:5px}
+.col span{font-size:13px;color:var(--ink-dim)}
+.toc{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 22px;margin:26px 0}
+.toc h2{font-family:var(--serif);font-size:13px;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--accent);font-weight:400;margin:0 0 10px}
+.toc ol{margin:0;padding-left:20px;columns:2;column-gap:28px}
+.toc li{padding:4px 0;break-inside:avoid}
+.toc a{color:var(--ink)}
+p.introp{font-family:var(--serif);font-size:17px;margin:0 0 16px}
+@media(max-width:600px){.toc ol{columns:1}}
 #lb{position:fixed;inset:0;background:rgba(8,9,10,.96);display:none;place-items:center;
   z-index:99;padding:18px;cursor:zoom-out}
 #lb.on{display:grid}
@@ -315,7 +332,68 @@ def place_page(card, date_sent):
     return page(f'{card["ru"]} — гайд по путешествиям', "".join(parts))
 
 
-def index_page(cards, dates, waiting):
+def collection_page(col):
+    """Большой тематический раздел: гайд по региону, подборка троп или пляжей."""
+    parts = ['<div class="wrap">', '<a class="back" href="index.html">← весь гайд</a>',
+             '<div class="hero">']
+    if col.get("kicker"):
+        parts.append(f'<div class="country">{esc(col["kicker"])}</div>')
+    parts.append(f'<h1>{esc(col["title"])}</h1>')
+    if col.get("lead"):
+        parts.append(f'<p class="lead">{esc(col["lead"])}</p>')
+    parts.append("</div>")
+
+    sections = col.get("sections", [])
+    if len(sections) > 2:
+        parts.append('<nav class="toc"><h2>Содержание</h2><ol>')
+        for i, s in enumerate(sections):
+            parts.append(f'<li><a href="#s{i}">{esc(s["title"])}</a></li>')
+        parts.append("</ol></nav>")
+
+    for para in col.get("intro", []):
+        parts.append(f'<p class="introp">{esc(para)}</p>')
+
+    for i, s in enumerate(sections):
+        parts.append(f'<section class="blk" id="s{i}">')
+        parts.append(f'<h2>{esc(s["title"])}</h2>')
+        if s.get("kicker"):
+            parts.append(f'<div class="status">{esc(s["kicker"])}</div>')
+        if s.get("summary"):
+            parts.append(f'<p class="lead">{esc(s["summary"])}</p>')
+        if s.get("photos"):
+            parts.append(gallery(s))
+        for para in s.get("text", []):
+            parts.append(f"<p>{esc(para)}</p>")
+        for it in s.get("items", []):
+            block = f'<div class="item"><b>{esc(it["name"])}</b>{esc(it.get("what", ""))}'
+            if it.get("tip"):
+                block += f'<div class="tip">↳ {esc(it["tip"])}</div>'
+            parts.append(block + "</div>")
+        if s.get("facts"):
+            parts.append('<ul class="clean">')
+            parts += [f"<li>{esc(f)}</li>" for f in s["facts"]]
+            parts.append("</ul>")
+        if s.get("practical"):
+            parts.append('<dl class="facts">')
+            for p in s["practical"]:
+                parts.append(f'<div><dt>{esc(p["label"])}</dt><dd>{esc(p["text"])}</dd></div>')
+            parts.append("</dl>")
+        parts.append("</section>")
+
+    if col.get("sources"):
+        parts.append('<section class="blk"><h2>Откуда информация</h2><ul class="clean">')
+        for s in col["sources"]:
+            parts.append(f'<li><a href="{esc(s["url"])}" target="_blank" '
+                         f'rel="noopener">{esc(s["title"])}</a></li>')
+        parts.append("</ul></section>")
+
+    if col.get("updated"):
+        parts.append(f'<footer>Обновлено {esc(col["updated"])}</footer>')
+    parts.append('<a class="back" href="index.html">← весь гайд</a></div>')
+    return page(f'{col["title"]} — гайд по путешествиям', "".join(parts))
+
+
+def index_page(cards, dates, waiting, collections=None):
     countries = sorted({c.get("country", "") for c in cards})
     regions = []
     for c in cards:
@@ -333,6 +411,19 @@ def index_page(cards, dates, waiting):
         f'<div class="stat"><b>{len(dates)}</b><span>дней</span></div>',
         f'<div class="stat"><b>{waiting}</b><span>в очереди</span></div>',
         "</div></header>",
+    ]
+
+    if collections:
+        head.append('<div class="cols">')
+        for col in collections:
+            head.append(
+                f'<a class="col" href="{esc(col["id"])}.html">'
+                f'<b>{esc(col["title"])}</b>'
+                f'<span>{esc(col.get("lead", ""))}</span></a>'
+            )
+        head.append("</div>")
+
+    head += [
         '<div class="tools">',
         '<input id="q" type="search" placeholder="Поиск: страна, место, слово…">',
         '<button class="chip on" data-region="all">Всё</button>',
@@ -396,12 +487,24 @@ def main():
         (DOCS / f"{card['id']}.html").write_text(
             place_page(card, sent_date.get(card["id"], "")), encoding="utf-8")
 
+    collections = []
+    col_dir = ROOT / "data" / "collections"
+    for path in sorted(col_dir.glob("*.json")) if col_dir.exists() else []:
+        col = read_json(path)
+        if not col:
+            continue
+        col.setdefault("id", path.stem)
+        (DOCS / f"{col['id']}.html").write_text(collection_page(col), encoding="utf-8")
+        collections.append(col)
+
     written = {p.stem for p in CARDS.glob("*.json")}
     waiting = len(written - set(log.get("sent", [])))
     dates = [d["date"] for d in log.get("days", [])]
-    (DOCS / "index.html").write_text(index_page(cards, dates, waiting), encoding="utf-8")
+    (DOCS / "index.html").write_text(
+        index_page(cards, dates, waiting, collections), encoding="utf-8")
 
-    print(f"Сайт собран: {len(cards)} мест, {len(dates)} дней, в очереди {waiting}")
+    print(f"Сайт собран: {len(cards)} мест, {len(dates)} дней, в очереди {waiting}, "
+          f"больших разделов {len(collections)}")
     return 0
 
 
