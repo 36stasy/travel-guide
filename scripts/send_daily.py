@@ -348,6 +348,20 @@ def main():
                or str(config.get("chatId", ""))).strip()
     per_day = int(config.get("placesPerDay", 2))
 
+    # Самопроверка: токен на месте и Telegram отвечает. Делается до всего
+    # остального, чтобы проблема с ключом всплыла сразу, а не в тишине.
+    if not dry_run:
+        if not token:
+            print("ОШИБКА: нет TELEGRAM_BOT_TOKEN. Добавь его в Secrets репозитория.",
+                  file=sys.stderr)
+            return 1
+        try:
+            me = Telegram(token, chat_id).call("getMe", {})
+            print(f"Связь с ботом есть: @{me['result']['username']}")
+        except RuntimeError as e:
+            print(f"ОШИБКА: Telegram не отвечает — {e}", file=sys.stderr)
+            return 1
+
     catalog = read_json(PLACES)
     order = rotation_order(catalog["places"], catalog["bucketOrder"])
 
