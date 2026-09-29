@@ -171,6 +171,23 @@ def build_text(card):
             rows.append(f"\n<b>По часам:</b> {esc(season['daily'])}")
         blocks.append("".join(rows))
 
+    safety = card.get("safety") or {}
+    if safety:
+        rows = ["🛡 <b>БЕЗОПАСНОСТЬ</b>"]
+        if safety.get("status"):
+            rows.append(f"\n<b>{esc(safety['status'])}</b>")
+        if safety.get("text"):
+            rows.append(f"\n{esc(safety['text'])}")
+        for point in safety.get("points", []):
+            rows.append(f"\n• {esc(point)}")
+        blocks.append("".join(rows))
+
+    if card.get("know"):
+        rows = ["📋 <b>ЧТО НУЖНО ЗНАТЬ</b>"]
+        for item in card["know"]:
+            rows.append(f"\n<b>{esc(item['label'])}:</b> {esc(item['text'])}")
+        blocks.append("".join(rows))
+
     if card.get("cinema"):
         rows = ["🎬 <b>ЗДЕСЬ СНИМАЛИ</b>"]
         for c in card["cinema"]:

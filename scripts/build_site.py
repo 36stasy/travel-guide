@@ -258,6 +258,25 @@ def place_page(card, date_sent):
                 parts.append(f"<div><dt>{label}</dt><dd>{esc(season[key])}</dd></div>")
         parts.append("</dl></section>")
 
+    safety = card.get("safety") or {}
+    if safety:
+        parts.append('<section class="blk"><h2>Безопасность</h2>')
+        if safety.get("status"):
+            parts.append(f'<div class="status">{esc(safety["status"])}</div>')
+        if safety.get("text"):
+            parts.append(f"<p>{esc(safety['text'])}</p>")
+        if safety.get("points"):
+            parts.append('<ul class="clean">')
+            parts += [f"<li>{esc(p)}</li>" for p in safety["points"]]
+            parts.append("</ul>")
+        parts.append("</section>")
+
+    if card.get("know"):
+        parts.append('<section class="blk"><h2>Что нужно знать</h2><dl class="facts">')
+        for item in card["know"]:
+            parts.append(f"<div><dt>{esc(item['label'])}</dt><dd>{esc(item['text'])}</dd></div>")
+        parts.append("</dl></section>")
+
     if card.get("cinema"):
         parts.append('<section class="blk"><h2>Здесь снимали</h2><ul class="clean">')
         for c in card["cinema"]:
