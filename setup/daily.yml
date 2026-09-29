@@ -1,0 +1,40 @@
+name: Утренняя рассылка мест
+
+on:
+  schedule:
+    # 06:00 UTC = 09:00 по Москве. GitHub иногда запускает с задержкой 5-20 минут.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-send
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Отправить карточки в Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python scripts/send_daily.py
+
+      - name: Пересобрать сайт-гайд
+        run: python scripts/build_site.py
+
+      - name: Записать, что отправлено
+        run: |
+          git config user.name "travel-guide"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "рассылка $(TZ=Europe/Moscow date +%F)"
+          git push
