@@ -21,10 +21,23 @@
         "Кайлас и кора (Тибет)",
         "Ньирагонго (ДР Конго)"
       ]
+    },
+    {
+      "date": "2026-10-01",
+      "ids": [
+        "bagan",
+        "dolomites"
+      ],
+      "places": [
+        "Баган (Мьянма)",
+        "Доломиты (Италия)"
+      ]
     }
   ],
   "sent": [
+    "bagan",
     "bora-bora",
+    "dolomites",
     "nyiragongo",
     "petra",
     "tibet-kailash"
