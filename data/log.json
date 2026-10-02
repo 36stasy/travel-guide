@@ -32,14 +32,27 @@
         "Баган (Мьянма)",
         "Доломиты (Италия)"
       ]
+    },
+    {
+      "date": "2026-10-02",
+      "ids": [
+        "tokyo-disney-resort",
+        "lofoten"
+      ],
+      "places": [
+        "Токийский Disney Resort (Япония)",
+        "Лофотены (Норвегия)"
+      ]
     }
   ],
   "sent": [
     "bagan",
     "bora-bora",
     "dolomites",
+    "lofoten",
     "nyiragongo",
     "petra",
-    "tibet-kailash"
+    "tibet-kailash",
+    "tokyo-disney-resort"
   ]
 }
