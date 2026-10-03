@@ -43,9 +43,21 @@
         "Токийский Disney Resort (Япония)",
         "Лофотены (Норвегия)"
       ]
+    },
+    {
+      "date": "2026-10-03",
+      "ids": [
+        "torres-del-paine",
+        "alaska-denali"
+      ],
+      "places": [
+        "Торрес-дель-Пайне (Чили)",
+        "Денали (США)"
+      ]
     }
   ],
   "sent": [
+    "alaska-denali",
     "bagan",
     "bora-bora",
     "dolomites",
@@ -53,6 +65,7 @@
     "nyiragongo",
     "petra",
     "tibet-kailash",
-    "tokyo-disney-resort"
+    "tokyo-disney-resort",
+    "torres-del-paine"
   ]
 }
