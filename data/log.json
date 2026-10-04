@@ -54,6 +54,17 @@
         "Торрес-дель-Пайне (Чили)",
         "Денали (США)"
       ]
+    },
+    {
+      "date": "2026-10-04",
+      "ids": [
+        "great-barrier-reef",
+        "fakarava"
+      ],
+      "places": [
+        "Большой Барьерный риф (Австралия)",
+        "Факарава (Французская Полинезия)"
+      ]
     }
   ],
   "sent": [
@@ -61,6 +72,8 @@
     "bagan",
     "bora-bora",
     "dolomites",
+    "fakarava",
+    "great-barrier-reef",
     "lofoten",
     "nyiragongo",
     "petra",
