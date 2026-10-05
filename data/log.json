@@ -65,6 +65,17 @@
         "Большой Барьерный риф (Австралия)",
         "Факарава (Французская Полинезия)"
       ]
+    },
+    {
+      "date": "2026-10-05",
+      "ids": [
+        "halong-lan-ha",
+        "tibet-lhasa"
+      ],
+      "places": [
+        "Лан-Ха и Кат-Ба (Вьетнам)",
+        "Лхаса: Потала и Джокханг (Тибет)"
+      ]
     }
   ],
   "sent": [
@@ -74,10 +85,12 @@
     "dolomites",
     "fakarava",
     "great-barrier-reef",
+    "halong-lan-ha",
     "lofoten",
     "nyiragongo",
     "petra",
     "tibet-kailash",
+    "tibet-lhasa",
     "tokyo-disney-resort",
     "torres-del-paine"
   ]
