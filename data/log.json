@@ -76,12 +76,24 @@
         "Лан-Ха и Кат-Ба (Вьетнам)",
         "Лхаса: Потала и Джокханг (Тибет)"
       ]
+    },
+    {
+      "date": "2026-10-06",
+      "ids": [
+        "wadi-rum",
+        "disneyland-paris"
+      ],
+      "places": [
+        "Вади-Рам (Иордания)",
+        "Диснейленд Париж (Франция)"
+      ]
     }
   ],
   "sent": [
     "alaska-denali",
     "bagan",
     "bora-bora",
+    "disneyland-paris",
     "dolomites",
     "fakarava",
     "great-barrier-reef",
@@ -92,6 +104,7 @@
     "tibet-kailash",
     "tibet-lhasa",
     "tokyo-disney-resort",
-    "torres-del-paine"
+    "torres-del-paine",
+    "wadi-rum"
   ]
 }
