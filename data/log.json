@@ -98,10 +98,22 @@
         "Вирунга: горные гориллы (ДР Конго)",
         "Чинкве-Терре (Италия)"
       ]
+    },
+    {
+      "date": "2026-10-08",
+      "ids": [
+        "senja-tromso",
+        "atacama"
+      ],
+      "places": [
+        "Сенья и Тромсё (Норвегия)",
+        "Атакама (Чили)"
+      ]
     }
   ],
   "sent": [
     "alaska-denali",
+    "atacama",
     "bagan",
     "bora-bora",
     "cinque-terre",
@@ -113,6 +125,7 @@
     "lofoten",
     "nyiragongo",
     "petra",
+    "senja-tromso",
     "tibet-kailash",
     "tibet-lhasa",
     "tokyo-disney-resort",
