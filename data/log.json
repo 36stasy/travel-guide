@@ -109,10 +109,22 @@
         "Сенья и Тромсё (Норвегия)",
         "Атакама (Чили)"
       ]
+    },
+    {
+      "date": "2026-10-09",
+      "ids": [
+        "alaska-wrangell",
+        "uluru-kata-tjuta"
+      ],
+      "places": [
+        "Врангель — Сент-Элайас (США)",
+        "Улуру и Ката-Тьюта (Австралия)"
+      ]
     }
   ],
   "sent": [
     "alaska-denali",
+    "alaska-wrangell",
     "atacama",
     "bagan",
     "bora-bora",
@@ -130,6 +142,7 @@
     "tibet-lhasa",
     "tokyo-disney-resort",
     "torres-del-paine",
+    "uluru-kata-tjuta",
     "virunga-gorillas",
     "wadi-rum"
   ]
