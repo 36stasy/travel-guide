@@ -120,6 +120,17 @@
         "Врангель — Сент-Элайас (США)",
         "Улуру и Ката-Тьюта (Австралия)"
       ]
+    },
+    {
+      "date": "2026-10-10",
+      "ids": [
+        "tikehau",
+        "son-doong"
+      ],
+      "places": [
+        "Тикехау (Французская Полинезия)",
+        "Шондоонг (Вьетнам)"
+      ]
     }
   ],
   "sent": [
@@ -138,8 +149,10 @@
     "nyiragongo",
     "petra",
     "senja-tromso",
+    "son-doong",
     "tibet-kailash",
     "tibet-lhasa",
+    "tikehau",
     "tokyo-disney-resort",
     "torres-del-paine",
     "uluru-kata-tjuta",
