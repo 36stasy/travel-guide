@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Австралия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-oceania.html">Австралия и Океания</a><i>→</i>Австралия</div><div class="hero"><div class="country">Австралия и Океания · 2 места</div><h1>Австралия</h1></div><div class="grid"><a class="card" href="great-barrier-reef.html" data-region="oceania" data-search="большой барьерный риф great barrier reef австралия 2300 километров кораллов, которые видно из космоса, — и которые сейчас впервые за несколько лет восстанавливаются. австралия и океания"><div class="ph"><img src="https://images.unsplash.com/photo-1638580591001-8c07e6f54097?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Австралия</div><h3>Большой Барьерный риф</h3><p class="lead">2300 километров кораллов, которые видно из космоса, — и которые сейчас впервые за несколько лет восстанавливаются.</p></div></a><a class="card" href="uluru-kata-tjuta.html" data-region="oceania" data-search="улуру и ката-тьюта uluru, kata tjuta австралия монолит, меняющий цвет от серого до раскалённо-красного за двадцать минут, — и единственное место в мире, где запрет подниматься на главную достопримечательность сделал её интереснее. австралия и океания"><div class="ph"><img src="https://images.unsplash.com/photo-1548296404-93c7694b2f91?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Австралия</div><h3>Улуру и Ката-Тьюта</h3><p class="lead">Монолит, меняющий цвет от серого до раскалённо-красного за двадцать минут, — и единственное место в мире, где запрет подниматься на главную достопримечательность сделал её интереснее.</p></div></a></div><p class="soon">Ещё 2 места по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-oceania.html">Австралия и Океания</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

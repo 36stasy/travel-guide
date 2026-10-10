@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Япония — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Япония</div><div class="hero"><div class="country">Азия · 1 место</div><h1>Япония</h1></div><div class="grid"><a class="card" href="tokyo-disney-resort.html" data-region="parks" data-search="токийский disney resort tokyo disney resort япония disneysea — тот парк, из-за которого взрослые люди без детей летят в японию. и он построен не disney, а японской компанией по лицензии — именно поэтому он не похож ни на один другой. парки развлечений"><div class="ph"><img src="https://images.unsplash.com/photo-1565839751802-33cd9264527c?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Япония</div><h3>Токийский Disney Resort</h3><p class="lead">DisneySea — тот парк, из-за которого взрослые люди без детей летят в Японию. И он построен не Disney, а японской компанией по лицензии — именно поэтому он не похож ни на один другой.</p></div></a></div><p class="soon">Ещё 1 место по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

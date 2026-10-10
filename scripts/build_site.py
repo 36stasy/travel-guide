@@ -19,6 +19,23 @@ CARDS = ROOT / "cards"
 DOCS = ROOT / "docs"
 LOG = ROOT / "data" / "log.json"
 PLACES = ROOT / "data" / "places.json"
+CONTINENTS = ROOT / "data" / "continents.json"
+CONFIG = ROOT / "data" / "config.json"
+
+# Для стран, которых нет ни в одном списке continents.json: место не теряется,
+# а попадает в этот раздел — видно, что карту пора дописать.
+OTHER_KEY = "other"
+OTHER_RU = "Остальной мир"
+
+# Транслитерация для имён файлов: страницы называются country-italiya.html,
+# потому что кириллица в путях ломается на части телефонов и в ссылках.
+TRANSLIT = {
+    "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "e",
+    "ж": "zh", "з": "z", "и": "i", "й": "y", "к": "k", "л": "l", "м": "m",
+    "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+    "ф": "f", "х": "h", "ц": "c", "ч": "ch", "ш": "sh", "щ": "sch",
+    "ъ": "", "ы": "y", "ь": "", "э": "e", "ю": "yu", "я": "ya",
+}
 
 REGION_RU = {
     "islands": "Острова",
@@ -31,6 +48,7 @@ REGION_RU = {
     "americas_south": "Южная Америка",
     "americas_north": "Северная Америка",
     "oceania": "Австралия и Океания",
+    "parks": "Парки развлечений",
 }
 
 CSS = """
@@ -126,6 +144,25 @@ dl.facts dd{margin:4px 0 0}
 .toc li{padding:4px 0;break-inside:avoid}
 .toc a{color:var(--ink)}
 p.introp{font-family:var(--serif);font-size:17px;margin:0 0 16px}
+
+/* разделы: континент → страна → место */
+.secthead{font-family:var(--serif);font-size:15px;text-transform:uppercase;
+  letter-spacing:.14em;color:var(--accent);font-weight:400;margin:34px 0 0;
+  padding-bottom:9px;border-bottom:1px solid var(--line)}
+.tiles{display:grid;gap:10px;margin:18px 0 8px;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr))}
+.tile{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;
+  padding:12px 15px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  transition:border-color .18s,transform .18s}
+.tile:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
+.tile b{font-family:var(--serif);font-size:16px;color:var(--ink);font-weight:400;
+  line-height:1.3}
+.tile span{font-size:12px;color:var(--ink-dim)}
+.crumbs{margin:26px 0 0;font-size:14px;color:var(--ink-dim)}
+.crumbs a{color:var(--ink-dim)}
+.crumbs a:hover{color:var(--accent)}
+.crumbs i{font-style:normal;opacity:.5;padding:0 6px}
+.soon{color:var(--ink-dim);font-size:13px;margin:14px 0 0}
 @media(max-width:600px){.toc ol{columns:1}}
 #lb{position:fixed;inset:0;background:rgba(8,9,10,.96);display:none;place-items:center;
   z-index:99;padding:18px;cursor:zoom-out}
@@ -187,6 +224,99 @@ def read_json(path, default=None):
         return json.load(f)
 
 
+def slug(text):
+    """«Папуа — Новая Гвинея» → «papua-novaya-gvineya»: имя файла без кириллицы."""
+    out = []
+    for ch in str(text or "").lower():
+        if ch in TRANSLIT:
+            out.append(TRANSLIT[ch])
+        elif ch.isalnum() and ch.isascii():
+            out.append(ch)
+        else:
+            out.append("-")
+    s = "".join(out)
+    while "--" in s:
+        s = s.replace("--", "-")
+    return s.strip("-") or "x"
+
+
+def load_geo():
+    """Карта континентов: порядок, русские имена и страна → континент."""
+    data = read_json(CONTINENTS, {}) or {}
+    cont = data.get("continents", {})
+    order = [k for k in data.get("order", []) if k in cont] or sorted(cont)
+    names = {k: cont[k].get("ru", k) for k in order}
+    leads = {k: cont[k].get("lead", "") for k in order}
+    of_country = {}
+    for key in order:
+        for country in cont[key].get("countries", []):
+            of_country[country] = key
+    names[OTHER_KEY] = OTHER_RU
+    leads[OTHER_KEY] = "Страны, которых пока нет в карте континентов."
+    return order, names, leads, of_country
+
+
+def slug_maps(countries, order):
+    """Уникальные имена файлов для стран и континентов."""
+    used = set()
+    pages = {}
+    for country in sorted(countries):
+        base = "country-" + slug(country)
+        name, i = base, 2
+        while name in used:
+            name, i = f"{base}-{i}", i + 1
+        used.add(name)
+        pages[country] = name
+    cont_pages = {k: "continent-" + slug(k) for k in list(order) + [OTHER_KEY]}
+    return pages, cont_pages
+
+
+def crumbs(*links):
+    """Хлебные крошки: пары (подпись, ссылка) — последняя пара без ссылки."""
+    out = []
+    for label, href in links:
+        out.append(f'<a href="{esc(href)}">{esc(label)}</a>' if href else esc(label))
+    return '<div class="crumbs">' + "<i>→</i>".join(out) + "</div>"
+
+
+def card_grid(cards, prefix=""):
+    """Сетка карточек-плиток, та же, что на главной."""
+    out = ['<div class="grid">']
+    for c in cards:
+        photo = (c.get("photos") or [{}])[0].get("url", "")
+        search = " ".join([c.get("ru", ""), c.get("en", ""), c.get("country", ""),
+                           c.get("lead", ""), REGION_RU.get(c.get("bucket", ""), "")]).lower()
+        thumb = (f'<div class="ph"><img src="{esc(photo)}" alt="" loading="lazy"></div>'
+                 if photo else "")
+        out.append(
+            f'<a class="card" href="{esc(prefix)}{esc(c["id"])}.html" '
+            f'data-region="{esc(c.get("bucket", ""))}" data-search="{esc(search)}">'
+            f'{thumb}<div class="body">'
+            f'<div class="country">{esc(c.get("country"))}</div>'
+            f'<h3>{esc(c["ru"])}</h3>'
+            f'<p class="lead">{esc(c.get("lead", ""))}</p></div></a>'
+        )
+    out.append("</div>")
+    return "".join(out)
+
+
+def plural(n, one, few, many):
+    n = abs(int(n))
+    if n % 10 == 1 and n % 100 != 11:
+        return one
+    if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14):
+        return few
+    return many
+
+
+def n_places(n):
+    return f"{n} {plural(n, 'место', 'места', 'мест')}"
+
+
+def n_countries(n):
+    return f"{n} {plural(n, 'страна', 'страны', 'стран')}"
+
+
 def page(title, body, extra_js=""):
     return f"""<!doctype html>
 <html lang="ru">
@@ -227,11 +357,19 @@ def gallery(card):
     return "".join(out)
 
 
-def place_page(card, date_sent):
+def place_page(card, date_sent, nav=None):
     region = REGION_RU.get(card.get("bucket", ""), "")
+    country = card.get("country") or ""
+    # nav = (имя континента, файл континента, файл страны) — для хлебных крошек
+    if nav:
+        cont_name, cont_page, country_page_name = nav
+        trail = crumbs(("весь гайд", "index.html"), (cont_name, f"{cont_page}.html"),
+                       (country, f"{country_page_name}.html"), (card["ru"], None))
+    else:
+        trail = crumbs(("весь гайд", "index.html"), (card["ru"], None))
     parts = [
         '<div class="wrap">',
-        '<a class="back" href="index.html">← весь гайд</a>',
+        trail,
         '<div class="hero">',
         f'<div class="country">{esc(card.get("country"))}{" · " + esc(region) if region else ""}</div>',
         f'<h1>{esc(card["ru"])}</h1>',
@@ -328,7 +466,13 @@ def place_page(card, date_sent):
 
     if date_sent:
         parts.append(f'<footer>Пришло в рассылке {esc(date_sent)}</footer>')
-    parts.append('<a class="back" href="index.html">← весь гайд</a></div>')
+    if nav:
+        cont_name, cont_page, country_page_name = nav
+        parts.append(crumbs(("весь гайд", "index.html"), (cont_name, f"{cont_page}.html"),
+                            (country, f"{country_page_name}.html")))
+    else:
+        parts.append('<a class="back" href="index.html">← весь гайд</a>')
+    parts.append("</div>")
     return page(f'{card["ru"]} — гайд по путешествиям', "".join(parts))
 
 
@@ -393,7 +537,60 @@ def collection_page(col):
     return page(f'{col["title"]} — гайд по путешествиям', "".join(parts))
 
 
-def index_page(cards, dates, waiting, collections=None):
+def continent_page(name, lead, countries, cards, pages, upcoming):
+    """Страница континента: список стран, под ним все места континента."""
+    parts = [
+        '<div class="wrap">',
+        crumbs(("весь гайд", "index.html"), (name, None)),
+        '<div class="hero">',
+        f'<div class="country">{esc(n_countries(len(countries)))} · '
+        f'{esc(n_places(len(cards)))}</div>',
+        f'<h1>{esc(name)}</h1>',
+    ]
+    if lead:
+        parts.append(f'<p class="lead">{esc(lead)}</p>')
+    parts.append("</div>")
+
+    parts.append('<h2 class="secthead">Страны</h2><div class="tiles">')
+    for country, items in countries:
+        parts.append(
+            f'<a class="tile" href="{esc(pages[country])}.html">'
+            f'<b>{esc(country)}</b><span>{esc(n_places(len(items)))}</span></a>'
+        )
+    parts.append("</div>")
+
+    if upcoming:
+        parts.append(f'<p class="soon">Ещё {esc(n_places(upcoming))} на этом континенте '
+                     f'написаны и ждут своей очереди в рассылке.</p>')
+
+    parts.append('<h2 class="secthead">Все места континента</h2>')
+    parts.append('<div class="tools"><input id="q" type="search" '
+                 'placeholder="Поиск по континенту: страна, место, слово…"></div>')
+    parts.append(card_grid(cards))
+    parts.append('<div class="empty" id="empty" style="display:none">Ничего не нашлось</div>')
+    parts.append(crumbs(("весь гайд", "index.html")) + "</div>")
+    return page(f"{name} — гайд по путешествиям", "".join(parts), FILTER_JS)
+
+
+def country_page(country, cards, cont_name, cont_page, upcoming):
+    """Страница страны: все места этой страны."""
+    parts = [
+        '<div class="wrap">',
+        crumbs(("весь гайд", "index.html"), (cont_name, f"{cont_page}.html"), (country, None)),
+        '<div class="hero">',
+        f'<div class="country">{esc(cont_name)} · {esc(n_places(len(cards)))}</div>',
+        f'<h1>{esc(country)}</h1>',
+        "</div>",
+    ]
+    parts.append(card_grid(cards))
+    if upcoming:
+        parts.append(f'<p class="soon">Ещё {esc(n_places(upcoming))} по этой стране '
+                     f'написаны и ждут своей очереди в рассылке.</p>')
+    parts.append(crumbs(("весь гайд", "index.html"), (cont_name, f"{cont_page}.html")) + "</div>")
+    return page(f"{country} — гайд по путешествиям", "".join(parts))
+
+
+def index_page(cards, dates, waiting, collections=None, geo=None):
     countries = sorted({c.get("country", "") for c in cards})
     regions = []
     for c in cards:
@@ -423,7 +620,17 @@ def index_page(cards, dates, waiting, collections=None):
             )
         head.append("</div>")
 
+    if geo:
+        head.append('<h2 class="secthead">По континентам</h2><div class="tiles">')
+        for key, name, n_c, n_p, href in geo:
+            head.append(
+                f'<a class="tile" href="{esc(href)}.html"><b>{esc(name)}</b>'
+                f'<span>{esc(n_countries(n_c))} · {n_p}</span></a>'
+            )
+        head.append("</div>")
+
     head += [
+        '<h2 class="secthead">Все места</h2>',
         '<div class="tools">',
         '<input id="q" type="search" placeholder="Поиск: страна, место, слово…">',
         '<button class="chip on" data-region="all">Всё</button>',
@@ -435,21 +642,8 @@ def index_page(cards, dates, waiting, collections=None):
     if not cards:
         head.append('<div class="empty">Пока ничего не пришло. Первая рассылка — в 9 утра.</div>')
 
-    head.append('<div class="grid">')
-    for c in cards:
-        photo = (c.get("photos") or [{}])[0].get("url", "")
-        search = " ".join([c.get("ru", ""), c.get("en", ""), c.get("country", ""),
-                           c.get("lead", ""), REGION_RU.get(c.get("bucket", ""), "")]).lower()
-        thumb = (f'<div class="ph"><img src="{esc(photo)}" alt="" loading="lazy"></div>'
-                 if photo else "")
-        head.append(
-            f'<a class="card" href="{esc(c["id"])}.html" data-region="{esc(c.get("bucket", ""))}" '
-            f'data-search="{esc(search)}">{thumb}<div class="body">'
-            f'<div class="country">{esc(c.get("country"))}</div>'
-            f'<h3>{esc(c["ru"])}</h3>'
-            f'<p class="lead">{esc(c.get("lead", ""))}</p></div></a>'
-        )
-    head.append('</div><div class="empty" id="empty" style="display:none">Ничего не нашлось</div>')
+    head.append(card_grid(cards))
+    head.append('<div class="empty" id="empty" style="display:none">Ничего не нашлось</div>')
     head.append(f'<footer>Обновлено {datetime.now().strftime("%d.%m.%Y")} · '
                 f'ещё {waiting} мест ждут своей очереди</footer></div>')
     return page("Мой гайд по путешествиям", "".join(head), FILTER_JS)
@@ -470,22 +664,83 @@ def main():
         for pid in day.get("ids", []):
             sent_date[pid] = day["date"]
 
-    # На сайт попадают только уже отправленные места — чтобы утро оставалось сюрпризом.
-    cards = []
-    for pid in log.get("sent", []):
+    # По умолчанию на сайт попадают только уже отправленные места — чтобы утро
+    # оставалось сюрпризом. Чтобы показывать и ещё не отправленные, поставить
+    # "site_show_upcoming": true в data/config.json.
+    config = read_json(CONFIG, {}) or {}
+    show_upcoming = bool(config.get("site_show_upcoming", False))
+    written = sorted(p.stem for p in CARDS.glob("*.json"))
+    sent_ids = list(log.get("sent", []))
+    visible_ids = written if show_upcoming else sent_ids
+    upcoming_ids = [pid for pid in written if pid not in set(sent_ids)]
+
+    def load_card(pid):
         card = read_json(CARDS / f"{pid}.json")
         if not card:
-            continue
+            return None
         base = meta.get(pid, {})
         for key in ("ru", "en", "country", "bucket"):
             card.setdefault(key, base.get(key, ""))
-        cards.append(card)
+        return card
 
+    cards = [c for c in (load_card(pid) for pid in visible_ids) if c]
     cards.sort(key=lambda c: sent_date.get(c["id"], ""), reverse=True)
 
+    # ---- разделы: континент → страна → место ----
+    order, cont_ru, cont_lead, cont_of = load_geo()
+
+    def continent_of(country):
+        return cont_of.get(country, OTHER_KEY)
+
+    by_country = {}
     for card in cards:
+        by_country.setdefault(card.get("country") or OTHER_RU, []).append(card)
+    for items in by_country.values():
+        items.sort(key=lambda c: c.get("ru", ""))
+
+    country_pages, cont_pages = slug_maps(by_country, order)
+
+    # сколько написанных, но ещё не отправленных мест приходится на страну и континент
+    soon_country, soon_cont = {}, {}
+    if not show_upcoming:
+        for pid in upcoming_ids:
+            base = meta.get(pid, {})
+            country = base.get("country") or OTHER_RU
+            soon_country[country] = soon_country.get(country, 0) + 1
+            key = continent_of(country)
+            soon_cont[key] = soon_cont.get(key, 0) + 1
+
+    # страницы мест — с хлебными крошками на свою страну и континент
+    for card in cards:
+        country = card.get("country") or OTHER_RU
+        key = continent_of(country)
+        nav = (cont_ru.get(key, OTHER_RU), cont_pages[key], country_pages[country])
         (DOCS / f"{card['id']}.html").write_text(
-            place_page(card, sent_date.get(card["id"], "")), encoding="utf-8")
+            place_page(card, sent_date.get(card["id"], ""), nav), encoding="utf-8")
+
+    # страницы стран
+    for country, items in by_country.items():
+        key = continent_of(country)
+        (DOCS / f"{country_pages[country]}.html").write_text(
+            country_page(country, items, cont_ru.get(key, OTHER_RU), cont_pages[key],
+                         soon_country.get(country, 0)),
+            encoding="utf-8")
+
+    # страницы континентов — только те, где уже есть хотя бы одно место
+    geo_tiles = []
+    for key in list(order) + [OTHER_KEY]:
+        countries = sorted(((c, items) for c, items in by_country.items()
+                            if continent_of(c) == key), key=lambda x: x[0])
+        if not countries:
+            continue
+        cont_cards = sorted((c for cs in countries for c in cs[1]),
+                            key=lambda c: (c.get("country", ""), c.get("ru", "")))
+        (DOCS / f"{cont_pages[key]}.html").write_text(
+            continent_page(cont_ru.get(key, OTHER_RU), cont_lead.get(key, ""),
+                           countries, cont_cards, country_pages, soon_cont.get(key, 0)),
+            encoding="utf-8")
+        geo_tiles.append((key, cont_ru.get(key, OTHER_RU), len(countries),
+                          esc(n_places(len(cont_cards))), cont_pages[key]))
 
     collections = []
     col_dir = ROOT / "data" / "collections"
@@ -497,13 +752,33 @@ def main():
         (DOCS / f"{col['id']}.html").write_text(collection_page(col), encoding="utf-8")
         collections.append(col)
 
-    written = {p.stem for p in CARDS.glob("*.json")}
-    waiting = len(written - set(log.get("sent", [])))
+    waiting = len(upcoming_ids)
     dates = [d["date"] for d in log.get("days", [])]
     (DOCS / "index.html").write_text(
-        index_page(cards, dates, waiting, collections), encoding="utf-8")
+        index_page(cards, dates, waiting, collections, geo_tiles), encoding="utf-8")
 
-    print(f"Сайт собран: {len(cards)} мест, {len(dates)} дней, в очереди {waiting}, "
+    # Подмести за собой: страницы мест, стран и континентов, которых больше нет в сборке
+    # (место переименовали, страну переложили, site_show_upcoming вернули в false).
+    # Без этого в docs/ копятся файлы-призраки, и неотправленные места утекают в сеть.
+    expected = {"index.html"}
+    expected |= {f"{c['id']}.html" for c in cards}
+    expected |= {f"{name}.html" for name in country_pages.values()}
+    expected |= {f"{tile[4]}.html" for tile in geo_tiles}
+    expected |= {f"{col['id']}.html" for col in collections}
+    stale = sorted(p.name for p in DOCS.glob("*.html") if p.name not in expected)
+    for name in stale:
+        (DOCS / name).unlink()
+    if stale:
+        print(f"Удалены устаревшие страницы ({len(stale)}): " + ", ".join(stale))
+
+    unmapped = sorted({c.get("country") for c in cards
+                       if (c.get("country") or OTHER_RU) not in cont_of})
+    if unmapped:
+        print("Нет в карте континентов (попали в «Остальной мир»): "
+              + ", ".join(x or "—" for x in unmapped))
+
+    print(f"Сайт собран: {len(cards)} мест, {len(by_country)} стран, "
+          f"{len(geo_tiles)} континентов, {len(dates)} дней, в очереди {waiting}, "
           f"больших разделов {len(collections)}")
     return 0
 

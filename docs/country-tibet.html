@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Тибет — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Тибет</div><div class="hero"><div class="country">Азия · 2 места</div><h1>Тибет</h1></div><div class="grid"><a class="card" href="tibet-kailash.html" data-region="asia_himalaya" data-search="кайлас и кора mount kailash тибет единственная заметная гора планеты, на вершине которой никогда не стоял человек — и не встанет: подниматься на неё запрещено. азия и гималаи"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kailash_north.JPG/1920px-Kailash_north.JPG" alt="" loading="lazy"></div><div class="body"><div class="country">Тибет</div><h3>Кайлас и кора</h3><p class="lead">Единственная заметная гора планеты, на вершине которой никогда не стоял человек — и не встанет: подниматься на неё запрещено.</p></div></a><a class="card" href="tibet-lhasa.html" data-region="asia_himalaya" data-search="лхаса: потала и джокханг lhasa тибет город на 3 656 метрах, где стоит дворец в тринадцать этажей и тысячу комнат, а вокруг главного храма круглосуточно идут люди — по часовой стрелке, многие в полный рост по земле. азия и гималаи"><div class="ph"><img src="https://images.unsplash.com/photo-1626359909709-8067b64e1655?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Тибет</div><h3>Лхаса: Потала и Джокханг</h3><p class="lead">Город на 3 656 метрах, где стоит дворец в тринадцать этажей и тысячу комнат, а вокруг главного храма круглосуточно идут люди — по часовой стрелке, многие в полный рост по земле.</p></div></a></div><p class="soon">Ещё 1 место по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

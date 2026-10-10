@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вьетнам — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Вьетнам</div><div class="hero"><div class="country">Азия · 2 места</div><h1>Вьетнам</h1></div><div class="grid"><a class="card" href="halong-lan-ha.html" data-region="asia_se" data-search="лан-ха и кат-ба lan ha bay &amp; cat ba вьетнам тот же самый залив с карстовыми островами, что и знаменитый халонг, — только лодок здесь втрое меньше, а вода чище. юго-восточная азия"><div class="ph"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Вьетнам</div><h3>Лан-Ха и Кат-Ба</h3><p class="lead">Тот же самый залив с карстовыми островами, что и знаменитый Халонг, — только лодок здесь втрое меньше, а вода чище.</p></div></a><a class="card" href="son-doong.html" data-region="asia_se" data-search="шондоонг hang son doong вьетнам внутри этой пещеры растут джунгли с тридцатиметровыми деревьями, течёт река и образуются собственные облака. попасть туда можно, но очередь расписана на годы вперёд. юго-восточная азия"><div class="ph"><img src="https://images.unsplash.com/photo-1638793774468-332888812661?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Вьетнам</div><h3>Шондоонг</h3><p class="lead">Внутри этой пещеры растут джунгли с тридцатиметровыми деревьями, течёт река и образуются собственные облака. Попасть туда можно, но очередь расписана на годы вперёд.</p></div></a></div><p class="soon">Ещё 2 места по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

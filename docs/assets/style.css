@@ -91,6 +91,25 @@ dl.facts dd{margin:4px 0 0}
 .toc li{padding:4px 0;break-inside:avoid}
 .toc a{color:var(--ink)}
 p.introp{font-family:var(--serif);font-size:17px;margin:0 0 16px}
+
+/* разделы: континент → страна → место */
+.secthead{font-family:var(--serif);font-size:15px;text-transform:uppercase;
+  letter-spacing:.14em;color:var(--accent);font-weight:400;margin:34px 0 0;
+  padding-bottom:9px;border-bottom:1px solid var(--line)}
+.tiles{display:grid;gap:10px;margin:18px 0 8px;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr))}
+.tile{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;
+  padding:12px 15px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  transition:border-color .18s,transform .18s}
+.tile:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
+.tile b{font-family:var(--serif);font-size:16px;color:var(--ink);font-weight:400;
+  line-height:1.3}
+.tile span{font-size:12px;color:var(--ink-dim)}
+.crumbs{margin:26px 0 0;font-size:14px;color:var(--ink-dim)}
+.crumbs a{color:var(--ink-dim)}
+.crumbs a:hover{color:var(--accent)}
+.crumbs i{font-style:normal;opacity:.5;padding:0 6px}
+.soon{color:var(--ink-dim);font-size:13px;margin:14px 0 0}
 @media(max-width:600px){.toc ol{columns:1}}
 #lb{position:fixed;inset:0;background:rgba(8,9,10,.96);display:none;place-items:center;
   z-index:99;padding:18px;cursor:zoom-out}

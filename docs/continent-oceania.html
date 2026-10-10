@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Австралия и Океания — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i>Австралия и Океания</div><div class="hero"><div class="country">2 страны · 5 мест</div><h1>Австралия и Океания</h1><p class="lead">Австралия и Новая Зеландия плюс атоллы и острова Тихого океана.</p></div><h2 class="secthead">Страны</h2><div class="tiles"><a class="tile" href="country-avstraliya.html"><b>Австралия</b><span>2 места</span></a><a class="tile" href="country-francuzskaya-polineziya.html"><b>Французская Полинезия</b><span>3 места</span></a></div><p class="soon">Ещё 3 места на этом континенте написаны и ждут своей очереди в рассылке.</p><h2 class="secthead">Все места континента</h2><div class="tools"><input id="q" type="search" placeholder="Поиск по континенту: страна, место, слово…"></div><div class="grid"><a class="card" href="great-barrier-reef.html" data-region="oceania" data-search="большой барьерный риф great barrier reef австралия 2300 километров кораллов, которые видно из космоса, — и которые сейчас впервые за несколько лет восстанавливаются. австралия и океания"><div class="ph"><img src="https://images.unsplash.com/photo-1638580591001-8c07e6f54097?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Австралия</div><h3>Большой Барьерный риф</h3><p class="lead">2300 километров кораллов, которые видно из космоса, — и которые сейчас впервые за несколько лет восстанавливаются.</p></div></a><a class="card" href="uluru-kata-tjuta.html" data-region="oceania" data-search="улуру и ката-тьюта uluru, kata tjuta австралия монолит, меняющий цвет от серого до раскалённо-красного за двадцать минут, — и единственное место в мире, где запрет подниматься на главную достопримечательность сделал её интереснее. австралия и океания"><div class="ph"><img src="https://images.unsplash.com/photo-1548296404-93c7694b2f91?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Австралия</div><h3>Улуру и Ката-Тьюта</h3><p class="lead">Монолит, меняющий цвет от серого до раскалённо-красного за двадцать минут, — и единственное место в мире, где запрет подниматься на главную достопримечательность сделал её интереснее.</p></div></a><a class="card" href="bora-bora.html" data-region="islands" data-search="бора-бора bora bora французская полинезия остров размером с москву внутри садового кольца — и лагуна вокруг него, ради которой сюда летят через полмира. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1738762932370-468a90e0ff68?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Французская Полинезия</div><h3>Бора-Бора</h3><p class="lead">Остров размером с Москву внутри Садового кольца — и лагуна вокруг него, ради которой сюда летят через полмира.</p></div></a><a class="card" href="tikehau.html" data-region="islands" data-search="тикехау tikehau французская полинезия кольцо розовых и белых островков вокруг лагуны, которую жак-ив кусто назвал самой богатой рыбой во всей полинезии. пятьдесят пять минут от таити — и никакого бора-бора. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1612303275451-8ba5b5303c8a?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Французская Полинезия</div><h3>Тикехау</h3><p class="lead">Кольцо розовых и белых островков вокруг лагуны, которую Жак-Ив Кусто назвал самой богатой рыбой во всей Полинезии. Пятьдесят пять минут от Таити — и никакого Бора-Бора.</p></div></a><a class="card" href="fakarava.html" data-region="islands" data-search="факарава fakarava французская полинезия атолл-прямоугольник 60 на 25 километров, где в южном проходе в одном месте живут семьсот серых рифовых акул — самая плотная их популяция на планете. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1499242360313-50c6d0b126e6?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Французская Полинезия</div><h3>Факарава</h3><p class="lead">Атолл-прямоугольник 60 на 25 километров, где в южном проходе в одном месте живут семьсот серых рифовых акул — самая плотная их популяция на планете.</p></div></a></div><div class="empty" id="empty" style="display:none">Ничего не нашлось</div><div class="crumbs"><a href="index.html">весь гайд</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+
+const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],
+      chips=[...document.querySelectorAll('.chip')];
+let region='all';
+function apply(){
+  const t=(q?q.value:'').trim().toLowerCase();
+  let shown=0;
+  cards.forEach(c=>{
+    const okR=region==='all'||c.dataset.region===region;
+    const okT=!t||c.dataset.search.includes(t);
+    const ok=okR&&okT;
+    c.style.display=ok?'':'none';
+    if(ok)shown++;
+  });
+  const e=document.getElementById('empty');
+  if(e)e.style.display=shown?'none':'block';
+}
+if(q)q.addEventListener('input',apply);
+chips.forEach(ch=>ch.addEventListener('click',()=>{
+  chips.forEach(x=>x.classList.remove('on'));ch.classList.add('on');
+  region=ch.dataset.region;apply();
+}));
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Чили — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-americas-south.html">Южная Америка</a><i>→</i>Чили</div><div class="hero"><div class="country">Южная Америка · 2 места</div><h1>Чили</h1></div><div class="grid"><a class="card" href="atacama.html" data-region="americas_south" data-search="атакама atacama чили место, где есть станции, не видевшие дождя за всю историю наблюдений, где nasa проверяет марсоходы и где половина больших телескопов земли смотрит в самое чистое небо, какое вообще бывает. южная америка"><div class="ph"><img src="https://images.unsplash.com/photo-1494783435443-c15feee0a80a?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Чили</div><h3>Атакама</h3><p class="lead">Место, где есть станции, не видевшие дождя за всю историю наблюдений, где NASA проверяет марсоходы и где половина больших телескопов Земли смотрит в самое чистое небо, какое вообще бывает.</p></div></a><a class="card" href="torres-del-paine.html" data-region="americas_south" data-search="торрес-дель-пайне torres del paine чили три гранитные башни, которые на рассвете становятся красными на восемь минут — и ради этих восьми минут люди выходят в три часа ночи. южная америка"><div class="ph"><img src="https://images.unsplash.com/photo-1528913010160-240d3500c209?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Чили</div><h3>Торрес-дель-Пайне</h3><p class="lead">Три гранитные башни, которые на рассвете становятся красными на восемь минут — и ради этих восьми минут люди выходят в три часа ночи.</p></div></a></div><p class="soon">Ещё 2 места по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-americas-south.html">Южная Америка</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

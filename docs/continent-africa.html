@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Африка — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i>Африка</div><div class="hero"><div class="country">1 страна · 2 места</div><h1>Африка</h1><p class="lead">Сафари и вулканы, Намиб и Сахара, гориллы Вирунги и острова у восточного берега.</p></div><h2 class="secthead">Страны</h2><div class="tiles"><a class="tile" href="country-dr-kongo.html"><b>ДР Конго</b><span>2 места</span></a></div><p class="soon">Ещё 3 места на этом континенте написаны и ждут своей очереди в рассылке.</p><h2 class="secthead">Все места континента</h2><div class="tools"><input id="q" type="search" placeholder="Поиск по континенту: страна, место, слово…"></div><div class="grid"><a class="card" href="virunga-gorillas.html" data-region="africa" data-search="вирунга: горные гориллы virunga, mountain gorillas др конго старейший национальный парк африки и час, проведённый в семи метрах от семьи горных горилл. сейчас туда нельзя — и ниже честно написано, куда можно вместо этого. африка"><div class="ph"><img src="https://images.unsplash.com/photo-1445583934509-4ad5ffe6ef08?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">ДР Конго</div><h3>Вирунга: горные гориллы</h3><p class="lead">Старейший национальный парк Африки и час, проведённый в семи метрах от семьи горных горилл. Сейчас туда нельзя — и ниже честно написано, куда можно вместо этого.</p></div></a><a class="card" href="nyiragongo.html" data-region="africa" data-search="ньирагонго mount nyiragongo др конго вулкан, на краю кратера которого можно было ночевать, глядя вниз на кипящую лаву — пока вирунгу не закрыли из-за войны. африка"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Nyiragongo_lava_lake.jpg" alt="" loading="lazy"></div><div class="body"><div class="country">ДР Конго</div><h3>Ньирагонго</h3><p class="lead">Вулкан, на краю кратера которого можно было ночевать, глядя вниз на кипящую лаву — пока Вирунгу не закрыли из-за войны.</p></div></a></div><div class="empty" id="empty" style="display:none">Ничего не нашлось</div><div class="crumbs"><a href="index.html">весь гайд</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+
+const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],
+      chips=[...document.querySelectorAll('.chip')];
+let region='all';
+function apply(){
+  const t=(q?q.value:'').trim().toLowerCase();
+  let shown=0;
+  cards.forEach(c=>{
+    const okR=region==='all'||c.dataset.region===region;
+    const okT=!t||c.dataset.search.includes(t);
+    const ok=okR&&okT;
+    c.style.display=ok?'':'none';
+    if(ok)shown++;
+  });
+  const e=document.getElementById('empty');
+  if(e)e.style.display=shown?'none':'block';
+}
+if(q)q.addEventListener('input',apply);
+chips.forEach(ch=>ch.addEventListener('click',()=>{
+  chips.forEach(x=>x.classList.remove('on'));ch.classList.add('on');
+  region=ch.dataset.region;apply();
+}));
+</script>
+</body>
+</html>

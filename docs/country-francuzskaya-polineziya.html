@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Французская Полинезия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-oceania.html">Австралия и Океания</a><i>→</i>Французская Полинезия</div><div class="hero"><div class="country">Австралия и Океания · 3 места</div><h1>Французская Полинезия</h1></div><div class="grid"><a class="card" href="bora-bora.html" data-region="islands" data-search="бора-бора bora bora французская полинезия остров размером с москву внутри садового кольца — и лагуна вокруг него, ради которой сюда летят через полмира. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1738762932370-468a90e0ff68?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Французская Полинезия</div><h3>Бора-Бора</h3><p class="lead">Остров размером с Москву внутри Садового кольца — и лагуна вокруг него, ради которой сюда летят через полмира.</p></div></a><a class="card" href="tikehau.html" data-region="islands" data-search="тикехау tikehau французская полинезия кольцо розовых и белых островков вокруг лагуны, которую жак-ив кусто назвал самой богатой рыбой во всей полинезии. пятьдесят пять минут от таити — и никакого бора-бора. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1612303275451-8ba5b5303c8a?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Французская Полинезия</div><h3>Тикехау</h3><p class="lead">Кольцо розовых и белых островков вокруг лагуны, которую Жак-Ив Кусто назвал самой богатой рыбой во всей Полинезии. Пятьдесят пять минут от Таити — и никакого Бора-Бора.</p></div></a><a class="card" href="fakarava.html" data-region="islands" data-search="факарава fakarava французская полинезия атолл-прямоугольник 60 на 25 километров, где в южном проходе в одном месте живут семьсот серых рифовых акул — самая плотная их популяция на планете. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1499242360313-50c6d0b126e6?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Французская Полинезия</div><h3>Факарава</h3><p class="lead">Атолл-прямоугольник 60 на 25 километров, где в южном проходе в одном месте живут семьсот серых рифовых акул — самая плотная их популяция на планете.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-oceania.html">Австралия и Океания</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

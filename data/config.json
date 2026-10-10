@@ -3,5 +3,7 @@
   "chatId": "409958314",
   "placesPerDay": 2,
   "minPhotos": 3,
-  "maxPhotos": 7
+  "maxPhotos": 7,
+  "_site_show_upcoming": "false — на сайте только уже отправленные места, чтобы утро оставалось сюрпризом. Поставить true — и в разделах появятся все написанные карточки сразу.",
+  "site_show_upcoming": false
 }

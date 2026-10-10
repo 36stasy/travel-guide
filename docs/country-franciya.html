@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Франция — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a><i>→</i>Франция</div><div class="hero"><div class="country">Европа · 1 место</div><h1>Франция</h1></div><div class="grid"><a class="card" href="disneyland-paris.html" data-region="parks" data-search="диснейленд париж disneyland paris франция парк, который начинался как провал и чуть не разорился, а теперь — самая посещаемая платная достопримечательность европы. и единственный диснейленд, под замком которого живёт дракон. парки развлечений"><div class="ph"><img src="https://images.unsplash.com/photo-1601898012923-d0218ce75969?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Франция</div><h3>Диснейленд Париж</h3><p class="lead">Парк, который начинался как провал и чуть не разорился, а теперь — самая посещаемая платная достопримечательность Европы. И единственный Диснейленд, под замком которого живёт дракон.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

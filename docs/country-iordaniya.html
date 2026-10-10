@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Иордания — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Иордания</div><div class="hero"><div class="country">Азия · 2 места</div><h1>Иордания</h1></div><div class="grid"><a class="card" href="wadi-rum.html" data-region="middle_east" data-search="вади-рам wadi rum иордания пустыня, которую голливуд шестьдесят лет подряд снимает вместо марса, арракиса и джеды — и в которой до сих пор живут бедуины, чьи предки водили здесь верблюдов две тысячи лет назад. ближний восток"><div class="ph"><img src="https://images.unsplash.com/photo-1558985040-ed4d5029dd50?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Иордания</div><h3>Вади-Рам</h3><p class="lead">Пустыня, которую Голливуд шестьдесят лет подряд снимает вместо Марса, Арракиса и Джеды — и в которой до сих пор живут бедуины, чьи предки водили здесь верблюдов две тысячи лет назад.</p></div></a><a class="card" href="petra.html" data-region="middle_east" data-search="петра petra иордания целый город, вырезанный внутри скалы — и найденный европейцами только в 1812 году, после шести веков забвения. ближний восток"><div class="ph"><img src="https://images.unsplash.com/photo-1548786811-dd6e453ccca7?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Иордания</div><h3>Петра</h3><p class="lead">Целый город, вырезанный внутри скалы — и найденный европейцами только в 1812 году, после шести веков забвения.</p></div></a></div><p class="soon">Ещё 1 место по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

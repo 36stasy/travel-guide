@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мьянма — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Мьянма</div><div class="hero"><div class="country">Азия · 1 место</div><h1>Мьянма</h1></div><div class="grid"><a class="card" href="bagan.html" data-region="asia_se" data-search="баган bagan мьянма равнина размером с париж, на которой стоят три с половиной тысячи храмов xi-xiii веков. и страна, в которую сейчас очень сложно решиться поехать. юго-восточная азия"><div class="ph"><img src="https://images.unsplash.com/photo-1499123785106-343e69e68db1?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Мьянма</div><h3>Баган</h3><p class="lead">Равнина размером с Париж, на которой стоят три с половиной тысячи храмов XI-XIII веков. И страна, в которую сейчас очень сложно решиться поехать.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

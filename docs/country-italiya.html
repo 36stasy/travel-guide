@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Италия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a><i>→</i>Италия</div><div class="hero"><div class="country">Европа · 2 места</div><h1>Италия</h1></div><div class="grid"><a class="card" href="dolomites.html" data-region="europe" data-search="доломиты dolomites италия горы, которые дважды в день становятся розовыми — и которые двести пятьдесят миллионов лет назад были коралловым рифом на дне тропического моря. европа"><div class="ph"><img src="https://images.unsplash.com/photo-1534106474077-f9e9c6f5a47c?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Италия</div><h3>Доломиты</h3><p class="lead">Горы, которые дважды в день становятся розовыми — и которые двести пятьдесят миллионов лет назад были коралловым рифом на дне тропического моря.</p></div></a><a class="card" href="cinque-terre.html" data-region="europe" data-search="чинкве-терре cinque terre италия пять рыбацких деревень, зажатых между отвесными скалами и морем, и почти семь тысяч километров сухих каменных стен, которыми восемьсот лет держали здесь землю. европа"><div class="ph"><img src="https://images.unsplash.com/photo-1551801319-ca06060f3fcc?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Италия</div><h3>Чинкве-Терре</h3><p class="lead">Пять рыбацких деревень, зажатых между отвесными скалами и морем, и почти семь тысяч километров сухих каменных стен, которыми восемьсот лет держали здесь землю.</p></div></a></div><p class="soon">Ещё 2 места по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

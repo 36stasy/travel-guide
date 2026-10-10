@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Норвегия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a><i>→</i>Норвегия</div><div class="hero"><div class="country">Европа · 2 места</div><h1>Норвегия</h1></div><div class="grid"><a class="card" href="lofoten.html" data-region="europe_north" data-search="лофотены lofoten норвегия горы поднимаются прямо из океана на 68-й параллели — там, где по всем правилам должна быть тундра, а не альпийские пики. северная европа и британия"><div class="ph"><img src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Норвегия</div><h3>Лофотены</h3><p class="lead">Горы поднимаются прямо из океана на 68-й параллели — там, где по всем правилам должна быть тундра, а не альпийские пики.</p></div></a><a class="card" href="senja-tromso.html" data-region="europe_north" data-search="сенья и тромсё senja, tromso норвегия остров, который выглядит точно как лофотены, но без автобусов и очередей, — и рядом город, откуда зимой выходят в море к сотням орок. северная европа и британия"><div class="ph"><img src="https://images.unsplash.com/photo-1581094935665-144e76b36c25?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Норвегия</div><h3>Сенья и Тромсё</h3><p class="lead">Остров, который выглядит точно как Лофотены, но без автобусов и очередей, — и рядом город, откуда зимой выходят в море к сотням орок.</p></div></a></div><p class="soon">Ещё 2 места по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

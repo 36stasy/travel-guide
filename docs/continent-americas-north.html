@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Северная Америка — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i>Северная Америка</div><div class="hero"><div class="country">1 страна · 2 места</div><h1>Северная Америка</h1><p class="lead">Национальные парки США и Канады, Аляска и Гренландия, Мексика и перешеек.</p></div><h2 class="secthead">Страны</h2><div class="tiles"><a class="tile" href="country-ssha.html"><b>США</b><span>2 места</span></a></div><p class="soon">Ещё 2 места на этом континенте написаны и ждут своей очереди в рассылке.</p><h2 class="secthead">Все места континента</h2><div class="tools"><input id="q" type="search" placeholder="Поиск по континенту: страна, место, слово…"></div><div class="grid"><a class="card" href="alaska-wrangell.html" data-region="americas_north" data-search="врангель — сент-элайас wrangell-st. elias сша парк больше швейцарии, в котором две дороги, одна деревня и девять из шестнадцати высочайших гор страны. внутри него шесть раз уложился бы йеллоустон. северная америка"><div class="ph"><img src="https://images.unsplash.com/photo-1604180989863-2cf17621c1bf?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">США</div><h3>Врангель — Сент-Элайас</h3><p class="lead">Парк больше Швейцарии, в котором две дороги, одна деревня и девять из шестнадцати высочайших гор страны. Внутри него шесть раз уложился бы Йеллоустон.</p></div></a><a class="card" href="alaska-denali.html" data-region="americas_north" data-search="денали denali сша гора, которая поднимается от подножия выше, чем эверест, — и которую большинство приезжающих так и не видят. северная америка"><div class="ph"><img src="https://images.unsplash.com/photo-1531884422565-1b4a26326a31?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">США</div><h3>Денали</h3><p class="lead">Гора, которая поднимается от подножия выше, чем Эверест, — и которую большинство приезжающих так и не видят.</p></div></a></div><div class="empty" id="empty" style="display:none">Ничего не нашлось</div><div class="crumbs"><a href="index.html">весь гайд</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+
+const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],
+      chips=[...document.querySelectorAll('.chip')];
+let region='all';
+function apply(){
+  const t=(q?q.value:'').trim().toLowerCase();
+  let shown=0;
+  cards.forEach(c=>{
+    const okR=region==='all'||c.dataset.region===region;
+    const okT=!t||c.dataset.search.includes(t);
+    const ok=okR&&okT;
+    c.style.display=ok?'':'none';
+    if(ok)shown++;
+  });
+  const e=document.getElementById('empty');
+  if(e)e.style.display=shown?'none':'block';
+}
+if(q)q.addEventListener('input',apply);
+chips.forEach(ch=>ch.addEventListener('click',()=>{
+  chips.forEach(x=>x.classList.remove('on'));ch.classList.add('on');
+  region=ch.dataset.region;apply();
+}));
+</script>
+</body>
+</html>
