@@ -131,6 +131,17 @@
         "Тикехау (Французская Полинезия)",
         "Шондоонг (Вьетнам)"
       ]
+    },
+    {
+      "date": "2026-10-11",
+      "ids": [
+        "tibet-everest-north",
+        "dana-feynan"
+      ],
+      "places": [
+        "Северный Эверест и Ронгбук (Тибет)",
+        "Дана и Фейнан (Иордания)"
+      ]
     }
   ],
   "sent": [
@@ -140,6 +151,7 @@
     "bagan",
     "bora-bora",
     "cinque-terre",
+    "dana-feynan",
     "disneyland-paris",
     "dolomites",
     "fakarava",
@@ -150,6 +162,7 @@
     "petra",
     "senja-tromso",
     "son-doong",
+    "tibet-everest-north",
     "tibet-kailash",
     "tibet-lhasa",
     "tikehau",
