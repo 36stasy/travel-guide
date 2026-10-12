@@ -142,6 +142,17 @@
         "Северный Эверест и Ронгбук (Тибет)",
         "Дана и Фейнан (Иордания)"
       ]
+    },
+    {
+      "date": "2026-10-12",
+      "ids": [
+        "shanghai-disneyland",
+        "congo-river"
+      ],
+      "places": [
+        "Шанхайский Диснейленд (Китай)",
+        "Река Конго и водопады Ливингстона (ДР Конго)"
+      ]
     }
   ],
   "sent": [
@@ -151,6 +162,7 @@
     "bagan",
     "bora-bora",
     "cinque-terre",
+    "congo-river",
     "dana-feynan",
     "disneyland-paris",
     "dolomites",
@@ -161,6 +173,7 @@
     "nyiragongo",
     "petra",
     "senja-tromso",
+    "shanghai-disneyland",
     "son-doong",
     "tibet-everest-north",
     "tibet-kailash",
