@@ -153,6 +153,17 @@
         "Шанхайский Диснейленд (Китай)",
         "Река Конго и водопады Ливингстона (ДР Конго)"
       ]
+    },
+    {
+      "date": "2026-10-13",
+      "ids": [
+        "matera",
+        "geiranger-trolltunga"
+      ],
+      "places": [
+        "Матера и Апулия (Италия)",
+        "Гейрангер и Тролльтунга (Норвегия)"
+      ]
     }
   ],
   "sent": [
@@ -167,9 +178,11 @@
     "disneyland-paris",
     "dolomites",
     "fakarava",
+    "geiranger-trolltunga",
     "great-barrier-reef",
     "halong-lan-ha",
     "lofoten",
+    "matera",
     "nyiragongo",
     "petra",
     "senja-tromso",
