@@ -164,14 +164,27 @@
         "Матера и Апулия (Италия)",
         "Гейрангер и Тролльтунга (Норвегия)"
       ]
+    },
+    {
+      "date": "2026-10-14",
+      "ids": [
+        "chiloe-carretera",
+        "alaska-katmai"
+      ],
+      "places": [
+        "Карретера-Аустраль и Мраморные пещеры (Чили)",
+        "Катмай и Брукс-Фоллс (США)"
+      ]
     }
   ],
   "sent": [
     "alaska-denali",
+    "alaska-katmai",
     "alaska-wrangell",
     "atacama",
     "bagan",
     "bora-bora",
+    "chiloe-carretera",
     "cinque-terre",
     "congo-river",
     "dana-feynan",
