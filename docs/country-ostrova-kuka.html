@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Острова Кука — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-oceania.html">Австралия и Океания</a><i>→</i>Острова Кука</div><div class="hero"><div class="country">Австралия и Океания · 1 место</div><h1>Острова Кука</h1></div><div class="grid"><a class="card" href="aitutaki.html" data-region="islands" data-search="аитутаки aitutaki острова кука лагуна, которую сравнивают с бора-бора и обычно в её пользу. разница в том, что здесь нет ни одного здания выше кокосовой пальмы, а туристов в день прилетает столько, сколько в бора-бора сходит с одного катера. острова"><div class="body"><div class="country">Острова Кука</div><h3>Аитутаки</h3><p class="lead">Лагуна, которую сравнивают с Бора-Бора и обычно в её пользу. Разница в том, что здесь нет ни одного здания выше кокосовой пальмы, а туристов в день прилетает столько, сколько в Бора-Бора сходит с одного катера.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-oceania.html">Австралия и Океания</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

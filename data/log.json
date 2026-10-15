@@ -175,9 +175,21 @@
         "Карретера-Аустраль и Мраморные пещеры (Чили)",
         "Катмай и Брукс-Фоллс (США)"
       ]
+    },
+    {
+      "date": "2026-10-15",
+      "ids": [
+        "kimberley-bungle",
+        "aitutaki"
+      ],
+      "places": [
+        "Кимберли и Бангл-Бангл (Австралия)",
+        "Аитутаки (Острова Кука)"
+      ]
     }
   ],
   "sent": [
+    "aitutaki",
     "alaska-denali",
     "alaska-katmai",
     "alaska-wrangell",
@@ -194,6 +206,7 @@
     "geiranger-trolltunga",
     "great-barrier-reef",
     "halong-lan-ha",
+    "kimberley-bungle",
     "lofoten",
     "matera",
     "nyiragongo",
