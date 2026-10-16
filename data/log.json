@@ -186,6 +186,17 @@
         "Кимберли и Бангл-Бангл (Австралия)",
         "Аитутаки (Острова Кука)"
       ]
+    },
+    {
+      "date": "2026-10-16",
+      "ids": [
+        "ha-giang",
+        "ladakh"
+      ],
+      "places": [
+        "Ха-Занг (Вьетнам)",
+        "Ладакх и Занскар (Индия)"
+      ]
     }
   ],
   "sent": [
@@ -205,8 +216,10 @@
     "fakarava",
     "geiranger-trolltunga",
     "great-barrier-reef",
+    "ha-giang",
     "halong-lan-ha",
     "kimberley-bungle",
+    "ladakh",
     "lofoten",
     "matera",
     "nyiragongo",

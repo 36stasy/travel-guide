@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Индия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Индия</div><div class="hero"><div class="country">Азия · 1 место</div><h1>Индия</h1></div><div class="grid"><a class="card" href="ladakh.html" data-region="asia_himalaya" data-search="ладакх и занскар ladakh, zanskar индия индия, в которой нет ничего индийского: вместо джунглей — лунная пустыня на трёх с половиной километрах, вместо храмов — монастыри на скалах, вместо муссона — двести миллиметров осадков в год. азия и гималаи"><div class="body"><div class="country">Индия</div><h3>Ладакх и Занскар</h3><p class="lead">Индия, в которой нет ничего индийского: вместо джунглей — лунная пустыня на трёх с половиной километрах, вместо храмов — монастыри на скалах, вместо муссона — двести миллиметров осадков в год.</p></div></a></div><p class="soon">Ещё 1 место по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>
