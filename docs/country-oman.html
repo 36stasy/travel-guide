@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Оман — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Оман</div><div class="hero"><div class="country">Азия · 1 место</div><h1>Оман</h1></div><div class="grid"><a class="card" href="salalah.html" data-region="middle_east" data-search="салала и сезон хариф salalah оман три месяца в году индийский муссон доходит до угла аравийского полуострова, и выжженные горы зарастают травой по колено. потом всё снова выгорает до камня. ближний восток"><div class="ph"><img src="https://images.unsplash.com/photo-1693561596793-8a06b850dc68?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Оман</div><h3>Салала и сезон хариф</h3><p class="lead">Три месяца в году индийский муссон доходит до угла Аравийского полуострова, и выжженные горы зарастают травой по колено. Потом всё снова выгорает до камня.</p></div></a></div><p class="soon">Ещё 1 место по этой стране написаны и ждут своей очереди в рассылке.</p><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

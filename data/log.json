@@ -197,6 +197,17 @@
         "Ха-Занг (Вьетнам)",
         "Ладакх и Занскар (Индия)"
       ]
+    },
+    {
+      "date": "2026-10-17",
+      "ids": [
+        "salalah",
+        "universal-studios-japan"
+      ],
+      "places": [
+        "Салала и сезон хариф (Оман)",
+        "Universal Studios Japan (Япония)"
+      ]
     }
   ],
   "sent": [
@@ -224,6 +235,7 @@
     "matera",
     "nyiragongo",
     "petra",
+    "salalah",
     "senja-tromso",
     "shanghai-disneyland",
     "son-doong",
@@ -234,6 +246,7 @@
     "tokyo-disney-resort",
     "torres-del-paine",
     "uluru-kata-tjuta",
+    "universal-studios-japan",
     "virunga-gorillas",
     "wadi-rum"
   ]
