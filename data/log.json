@@ -208,6 +208,17 @@
         "Салала и сезон хариф (Оман)",
         "Universal Studios Japan (Япония)"
       ]
+    },
+    {
+      "date": "2026-10-18",
+      "ids": [
+        "lola-ya-bonobo",
+        "sicily-etna"
+      ],
+      "places": [
+        "Лола-я-Бонобо и Киншаса (ДР Конго)",
+        "Сицилия и Этна (Италия)"
+      ]
     }
   ],
   "sent": [
@@ -232,12 +243,14 @@
     "kimberley-bungle",
     "ladakh",
     "lofoten",
+    "lola-ya-bonobo",
     "matera",
     "nyiragongo",
     "petra",
     "salalah",
     "senja-tromso",
     "shanghai-disneyland",
+    "sicily-etna",
     "son-doong",
     "tibet-everest-north",
     "tibet-kailash",
