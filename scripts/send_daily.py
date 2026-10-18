@@ -95,12 +95,57 @@ def rotation_order(places, bucket_order):
     return order
 
 
+def queue(catalog, log, config, recent_window=10):
+    """Очередь неотправленных мест — в каком порядке они пойдут в рассылку.
+
+    Сначала места с priority: 2 — то, что она назвала сама (Кокора, Сейшелы,
+    Халонг-подобные заливы, пещеры с лесом, водопады), 1 — чудеса в её вкусе
+    и места из её видео.
+    Внутри — сначала страны, откуда отправлено меньше всего, и не страна
+    из последних recent_window мест. Закрытые (blocked) и исключённые
+    страны в очередь не попадают вообще. Результат детерминирован.
+    """
+    places = catalog["places"]
+    base = {p["id"]: i for i, p in
+            enumerate(rotation_order(places, catalog["bucketOrder"]))}
+    by_id = {p["id"]: p for p in places}
+    excluded = set(config.get("excludeCountries", []))
+    sent = set(log.get("sent", []))
+
+    counts = defaultdict(int)
+    for pid in sent:
+        if pid in by_id:
+            counts[by_id[pid]["country"]] += 1
+    recent = [by_id[pid]["country"] for day in log.get("days", [])
+              for pid in day.get("ids", []) if pid in by_id]
+
+    left = [p for p in places if p["id"] not in sent and not p.get("blocked")
+            and p["country"] not in excluded]
+    order = []
+    while left:
+        window = set(recent[-recent_window:])
+        best = min(left, key=lambda p: (-(p.get("priority") or 0),
+                                        p["country"] in window,
+                                        counts[p["country"]],
+                                        base[p["id"]]))
+        left.remove(best)
+        order.append(best)
+        counts[best["country"]] += 1
+        recent.append(best["country"])
+    return order
+
+
 def pick_today(order, sent_ids, count):
-    """Следующие неотправленные места, у которых уже написана карточка."""
+    """Следующие места из очереди, у которых уже написана карточка.
+
+    Два места одного дня — всегда из разных стран.
+    """
     picked = []
     waiting_without_card = 0
     for place in order:
         if place["id"] in sent_ids:
+            continue
+        if any(c["country"] == place["country"] for c in picked):
             continue
         card_path = CARDS / f"{place['id']}.json"
         if not card_path.exists():
@@ -363,10 +408,9 @@ def main():
             return 1
 
     catalog = read_json(PLACES)
-    order = rotation_order(catalog["places"], catalog["bucketOrder"])
-
     log = read_json(LOG, {"days": [], "sent": []}) or {"days": [], "sent": []}
     sent_ids = set(log.get("sent", []))
+    order = queue(catalog, log, config)
 
     now = datetime.now(MSK) if MSK else datetime.now()
     today = now.strftime("%Y-%m-%d")
@@ -377,7 +421,7 @@ def main():
 
     cards, waiting = pick_today(order, sent_ids, per_day)
     total_written = len(list(CARDS.glob("*.json")))
-    left = total_written - len(sent_ids)
+    left = sum(1 for p in order if (CARDS / f"{p['id']}.json").exists())
 
     print(f"Дата: {today}")
     print(f"Написано карточек: {total_written}, отправлено ранее: {len(sent_ids)}, в запасе: {left}")
@@ -431,7 +475,7 @@ def main():
     log["sent"] = sorted(sent_ids | {c["id"] for c in delivered})
     write_json(LOG, log)
 
-    left_after = total_written - len(log["sent"])
+    left_after = left - len(delivered)
     if left_after <= 4:
         tg.text(
             f"⚠️ <b>Осталось карточек: {left_after}</b>\n\n"
