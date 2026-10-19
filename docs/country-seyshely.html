@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сейшелы — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-africa.html">Африка</a><i>→</i>Сейшелы</div><div class="hero"><div class="country">Африка · 1 место</div><h1>Сейшелы</h1></div><div class="grid"><a class="card" href="la-digue.html" data-region="islands" data-search="ла-диг la digue сейшелы остров, где розовые гранитные валуны размером с дом стоят прямо в бирюзовой воде по колено, машин почти нет, а ездят на велосипедах. тот самый пляж с обоев рабочего стола существует, и в нём можно постоять. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1553829176-61484f865ac3?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Сейшелы</div><h3>Ла-Диг</h3><p class="lead">Остров, где розовые гранитные валуны размером с дом стоят прямо в бирюзовой воде по колено, машин почти нет, а ездят на велосипедах. Тот самый пляж с обоев рабочего стола существует, и в нём можно постоять.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-africa.html">Африка</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

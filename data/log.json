@@ -219,6 +219,17 @@
         "Лола-я-Бонобо и Киншаса (ДР Конго)",
         "Сицилия и Этна (Италия)"
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "ids": [
+        "la-digue",
+        "iguazu"
+      ],
+      "places": [
+        "Ла-Диг (Сейшелы)",
+        "Игуасу (Аргентина)"
+      ]
     }
   ],
   "sent": [
@@ -240,7 +251,9 @@
     "great-barrier-reef",
     "ha-giang",
     "halong-lan-ha",
+    "iguazu",
     "kimberley-bungle",
+    "la-digue",
     "ladakh",
     "lofoten",
     "lola-ya-bonobo",
