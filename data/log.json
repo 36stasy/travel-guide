@@ -230,6 +230,17 @@
         "Ла-Диг (Сейшелы)",
         "Игуасу (Аргентина)"
       ]
+    },
+    {
+      "date": "2026-10-20",
+      "ids": [
+        "el-nido",
+        "raja-ampat"
+      ],
+      "places": [
+        "Эль-Нидо и Бакуит (Филиппины)",
+        "Раджа-Ампат (Индонезия)"
+      ]
     }
   ],
   "sent": [
@@ -246,6 +257,7 @@
     "dana-feynan",
     "disneyland-paris",
     "dolomites",
+    "el-nido",
     "fakarava",
     "geiranger-trolltunga",
     "great-barrier-reef",
@@ -260,6 +272,7 @@
     "matera",
     "nyiragongo",
     "petra",
+    "raja-ampat",
     "salalah",
     "senja-tromso",
     "shanghai-disneyland",

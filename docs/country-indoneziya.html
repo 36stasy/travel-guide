@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Индонезия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Индонезия</div><div class="hero"><div class="country">Азия · 1 место</div><h1>Индонезия</h1></div><div class="grid"><a class="card" href="raja-ampat.html" data-region="islands" data-search="раджа-ампат raja ampat индонезия сотни известняковых островков, подточенных водой снизу, стоят в бирюзовых лагунах, как грибы в луже. главное здесь видно с лестницы на триста ступеней, без акваланга и без всякой подготовки. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Индонезия</div><h3>Раджа-Ампат</h3><p class="lead">Сотни известняковых островков, подточенных водой снизу, стоят в бирюзовых лагунах, как грибы в луже. Главное здесь видно с лестницы на триста ступеней, без акваланга и без всякой подготовки.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>
