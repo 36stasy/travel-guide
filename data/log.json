@@ -241,6 +241,17 @@
         "Эль-Нидо и Бакуит (Филиппины)",
         "Раджа-Ампат (Индонезия)"
       ]
+    },
+    {
+      "date": "2026-10-21",
+      "ids": [
+        "colombia-cocora",
+        "new-caledonia"
+      ],
+      "places": [
+        "Кокора и Саленто (Колумбия)",
+        "Новая Каледония (Новая Каледония)"
+      ]
     }
   ],
   "sent": [
@@ -253,6 +264,7 @@
     "bora-bora",
     "chiloe-carretera",
     "cinque-terre",
+    "colombia-cocora",
     "congo-river",
     "dana-feynan",
     "disneyland-paris",
@@ -270,6 +282,7 @@
     "lofoten",
     "lola-ya-bonobo",
     "matera",
+    "new-caledonia",
     "nyiragongo",
     "petra",
     "raja-ampat",
