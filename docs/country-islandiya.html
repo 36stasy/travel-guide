@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Исландия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a><i>→</i>Исландия</div><div class="hero"><div class="country">Европа · 1 место</div><h1>Исландия</h1></div><div class="grid"><a class="card" href="iceland-highlands.html" data-region="europe_north" data-search="исландия: ландманналаугар и торсмёрк landmannalaugar, highlands исландия радужные горы из риолита, горячая река посреди лавового поля — и дорога, которая существует только с конца июня по середину сентября, а в остальное время её просто нет. северная европа и британия"><div class="ph"><img src="https://images.unsplash.com/photo-1477573893384-10fa704dfbd9?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Исландия</div><h3>Исландия: Ландманналаугар и Торсмёрк</h3><p class="lead">Радужные горы из риолита, горячая река посреди лавового поля — и дорога, которая существует только с конца июня по середину сентября, а в остальное время её просто нет.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

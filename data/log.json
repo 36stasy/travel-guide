@@ -252,6 +252,17 @@
         "Кокора и Саленто (Колумбия)",
         "Новая Каледония (Новая Каледония)"
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "ids": [
+        "sossusvlei",
+        "iceland-highlands"
+      ],
+      "places": [
+        "Соссусвлей и Дедвлей (Намибия)",
+        "Исландия: Ландманналаугар и Торсмёрк (Исландия)"
+      ]
     }
   ],
   "sent": [
@@ -275,6 +286,7 @@
     "great-barrier-reef",
     "ha-giang",
     "halong-lan-ha",
+    "iceland-highlands",
     "iguazu",
     "kimberley-bungle",
     "la-digue",
@@ -291,6 +303,7 @@
     "shanghai-disneyland",
     "sicily-etna",
     "son-doong",
+    "sossusvlei",
     "tibet-everest-north",
     "tibet-kailash",
     "tibet-lhasa",
