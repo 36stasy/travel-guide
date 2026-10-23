@@ -263,6 +263,17 @@
         "Соссусвлей и Дедвлей (Намибия)",
         "Исландия: Ландманналаугар и Торсмёрк (Исландия)"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "ids": [
+        "angel-falls",
+        "phang-nga"
+      ],
+      "places": [
+        "Анхель и Рорайма (Венесуэла)",
+        "Залив Пханг-Нга (Таиланд)"
+      ]
     }
   ],
   "sent": [
@@ -270,6 +281,7 @@
     "alaska-denali",
     "alaska-katmai",
     "alaska-wrangell",
+    "angel-falls",
     "atacama",
     "bagan",
     "bora-bora",
@@ -297,6 +309,7 @@
     "new-caledonia",
     "nyiragongo",
     "petra",
+    "phang-nga",
     "raja-ampat",
     "salalah",
     "senja-tromso",

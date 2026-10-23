@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Таиланд — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a><i>→</i>Таиланд</div><div class="hero"><div class="country">Азия · 1 место</div><h1>Таиланд</h1></div><div class="grid"><a class="card" href="phang-nga.html" data-region="islands" data-search="залив пханг-нга phang nga bay таиланд скалы, торчащие из моря, ты уже видела в халонге. здесь фокус другой: эти скалы полые. в них есть пещеры, через которые на каяке заплываешь внутрь острова, а там открытое небо и тихая лагуна, которую со стороны моря не видно совсем. острова"><div class="ph"><img src="https://images.unsplash.com/photo-1608788524926-41b5181b89a2?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Таиланд</div><h3>Залив Пханг-Нга</h3><p class="lead">Скалы, торчащие из моря, ты уже видела в Халонге. Здесь фокус другой: эти скалы полые. В них есть пещеры, через которые на каяке заплываешь внутрь острова, а там открытое небо и тихая лагуна, которую со стороны моря не видно совсем.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-asia.html">Азия</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>
