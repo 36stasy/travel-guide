@@ -274,6 +274,17 @@
         "Анхель и Рорайма (Венесуэла)",
         "Залив Пханг-Нга (Таиланд)"
       ]
+    },
+    {
+      "date": "2026-10-24",
+      "ids": [
+        "zhangjiajie",
+        "vallee-de-mai"
+      ],
+      "places": [
+        "Чжанцзяцзе (Китай)",
+        "Прален и Валле-де-Мэ (Сейшелы)"
+      ]
     }
   ],
   "sent": [
@@ -325,7 +336,9 @@
     "torres-del-paine",
     "uluru-kata-tjuta",
     "universal-studios-japan",
+    "vallee-de-mai",
     "virunga-gorillas",
-    "wadi-rum"
+    "wadi-rum",
+    "zhangjiajie"
   ]
 }
