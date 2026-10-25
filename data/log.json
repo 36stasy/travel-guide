@@ -285,6 +285,17 @@
         "Чжанцзяцзе (Китай)",
         "Прален и Валле-де-Мэ (Сейшелы)"
       ]
+    },
+    {
+      "date": "2026-10-25",
+      "ids": [
+        "phong-nha-caves",
+        "coron"
+      ],
+      "places": [
+        "Фонгня: Хангэн и Тулан (Вьетнам)",
+        "Корон и затонувший флот (Филиппины)"
+      ]
     }
   ],
   "sent": [
@@ -300,6 +311,7 @@
     "cinque-terre",
     "colombia-cocora",
     "congo-river",
+    "coron",
     "dana-feynan",
     "disneyland-paris",
     "dolomites",
@@ -321,6 +333,7 @@
     "nyiragongo",
     "petra",
     "phang-nga",
+    "phong-nha-caves",
     "raja-ampat",
     "salalah",
     "senja-tromso",
