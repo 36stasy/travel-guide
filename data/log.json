@@ -296,6 +296,17 @@
         "Фонгня: Хангэн и Тулан (Вьетнам)",
         "Корон и затонувший флот (Филиппины)"
       ]
+    },
+    {
+      "date": "2026-10-26",
+      "ids": [
+        "komodo-padar",
+        "lord-howe"
+      ],
+      "places": [
+        "Комодо и Падар (Индонезия)",
+        "Лорд-Хау (Австралия)"
+      ]
     }
   ],
   "sent": [
@@ -324,10 +335,12 @@
     "iceland-highlands",
     "iguazu",
     "kimberley-bungle",
+    "komodo-padar",
     "la-digue",
     "ladakh",
     "lofoten",
     "lola-ya-bonobo",
+    "lord-howe",
     "matera",
     "new-caledonia",
     "nyiragongo",
