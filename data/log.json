@@ -307,6 +307,17 @@
         "Комодо и Падар (Индонезия)",
         "Лорд-Хау (Австралия)"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "ids": [
+        "moorea",
+        "tumpak-sewu"
+      ],
+      "places": [
+        "Муреа (Французская Полинезия)",
+        "Тумпак-Севу (Индонезия)"
+      ]
     }
   ],
   "sent": [
@@ -342,6 +353,7 @@
     "lola-ya-bonobo",
     "lord-howe",
     "matera",
+    "moorea",
     "new-caledonia",
     "nyiragongo",
     "petra",
@@ -360,6 +372,7 @@
     "tikehau",
     "tokyo-disney-resort",
     "torres-del-paine",
+    "tumpak-sewu",
     "uluru-kata-tjuta",
     "universal-studios-japan",
     "vallee-de-mai",
