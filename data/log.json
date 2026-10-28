@@ -318,6 +318,17 @@
         "Муреа (Французская Полинезия)",
         "Тумпак-Севу (Индонезия)"
       ]
+    },
+    {
+      "date": "2026-10-28",
+      "ids": [
+        "dettifoss-hengifoss",
+        "bohol-kawasan"
+      ],
+      "places": [
+        "Деттифосс, Хенгифосс и Стюдлагиль (Исландия)",
+        "Бохоль и Кавасан (Филиппины)"
+      ]
     }
   ],
   "sent": [
@@ -328,6 +339,7 @@
     "angel-falls",
     "atacama",
     "bagan",
+    "bohol-kawasan",
     "bora-bora",
     "chiloe-carretera",
     "cinque-terre",
@@ -335,6 +347,7 @@
     "congo-river",
     "coron",
     "dana-feynan",
+    "dettifoss-hengifoss",
     "disneyland-paris",
     "dolomites",
     "el-nido",
