@@ -329,6 +329,17 @@
         "Деттифосс, Хенгифосс и Стюдлагиль (Исландия)",
         "Бохоль и Кавасан (Филиппины)"
       ]
+    },
+    {
+      "date": "2026-10-29",
+      "ids": [
+        "nusantara",
+        "balabac"
+      ],
+      "places": [
+        "Нусантара — новая столица (Индонезия)",
+        "Балабак (Филиппины)"
+      ]
     }
   ],
   "sent": [
@@ -339,6 +350,7 @@
     "angel-falls",
     "atacama",
     "bagan",
+    "balabac",
     "bohol-kawasan",
     "bora-bora",
     "chiloe-carretera",
@@ -368,6 +380,7 @@
     "matera",
     "moorea",
     "new-caledonia",
+    "nusantara",
     "nyiragongo",
     "petra",
     "phang-nga",
