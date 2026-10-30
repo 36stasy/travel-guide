@@ -340,6 +340,17 @@
         "Нусантара — новая столица (Индонезия)",
         "Балабак (Филиппины)"
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "ids": [
+        "trang-an-tam-coc",
+        "jomblang-yogyakarta"
+      ],
+      "places": [
+        "Чанган и Тамкок (Вьетнам)",
+        "Пещера Джомбланг и Джокьякарта (Индонезия)"
+      ]
     }
   ],
   "sent": [
@@ -370,6 +381,7 @@
     "halong-lan-ha",
     "iceland-highlands",
     "iguazu",
+    "jomblang-yogyakarta",
     "kimberley-bungle",
     "komodo-padar",
     "la-digue",
@@ -398,6 +410,7 @@
     "tikehau",
     "tokyo-disney-resort",
     "torres-del-paine",
+    "trang-an-tam-coc",
     "tumpak-sewu",
     "uluru-kata-tjuta",
     "universal-studios-japan",
