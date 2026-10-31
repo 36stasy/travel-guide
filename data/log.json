@@ -351,6 +351,17 @@
         "Чанган и Тамкок (Вьетнам)",
         "Пещера Джомбланг и Джокьякарта (Индонезия)"
       ]
+    },
+    {
+      "date": "2026-10-31",
+      "ids": [
+        "belitung",
+        "vaadhoo"
+      ],
+      "places": [
+        "Белитунг (Индонезия)",
+        "Ваадху и светящееся море (Мальдивы)"
+      ]
     }
   ],
   "sent": [
@@ -362,6 +373,7 @@
     "atacama",
     "bagan",
     "balabac",
+    "belitung",
     "bohol-kawasan",
     "bora-bora",
     "chiloe-carretera",
@@ -414,6 +426,7 @@
     "tumpak-sewu",
     "uluru-kata-tjuta",
     "universal-studios-japan",
+    "vaadhoo",
     "vallee-de-mai",
     "virunga-gorillas",
     "wadi-rum",
