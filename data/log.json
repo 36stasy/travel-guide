@@ -362,6 +362,17 @@
         "Белитунг (Индонезия)",
         "Ваадху и светящееся море (Мальдивы)"
       ]
+    },
+    {
+      "date": "2026-11-01",
+      "ids": [
+        "wulong-tiankeng",
+        "maupiti"
+      ],
+      "places": [
+        "Улун и провал Сяочжай (Китай)",
+        "Маупити (Французская Полинезия)"
+      ]
     }
   ],
   "sent": [
@@ -402,6 +413,7 @@
     "lola-ya-bonobo",
     "lord-howe",
     "matera",
+    "maupiti",
     "moorea",
     "new-caledonia",
     "nusantara",
@@ -430,6 +442,7 @@
     "vallee-de-mai",
     "virunga-gorillas",
     "wadi-rum",
+    "wulong-tiankeng",
     "zhangjiajie"
   ]
 }
