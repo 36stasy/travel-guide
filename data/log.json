@@ -373,6 +373,17 @@
         "Улун и провал Сяочжай (Китай)",
         "Маупити (Французская Полинезия)"
       ]
+    },
+    {
+      "date": "2026-11-02",
+      "ids": [
+        "sumba",
+        "cappadocia"
+      ],
+      "places": [
+        "Сумба (Индонезия)",
+        "Каппадокия (Турция)"
+      ]
     }
   ],
   "sent": [
@@ -387,6 +398,7 @@
     "belitung",
     "bohol-kawasan",
     "bora-bora",
+    "cappadocia",
     "chiloe-carretera",
     "cinque-terre",
     "colombia-cocora",
@@ -428,6 +440,7 @@
     "sicily-etna",
     "son-doong",
     "sossusvlei",
+    "sumba",
     "tibet-everest-north",
     "tibet-kailash",
     "tibet-lhasa",
