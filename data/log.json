@@ -384,6 +384,17 @@
         "Сумба (Индонезия)",
         "Каппадокия (Турция)"
       ]
+    },
+    {
+      "date": "2026-11-03",
+      "ids": [
+        "faroe",
+        "uyuni"
+      ],
+      "places": [
+        "Фарерские острова (Фареры)",
+        "Салар-де-Уюни (Боливия)"
+      ]
     }
   ],
   "sent": [
@@ -410,6 +421,7 @@
     "dolomites",
     "el-nido",
     "fakarava",
+    "faroe",
     "geiranger-trolltunga",
     "great-barrier-reef",
     "ha-giang",
@@ -451,6 +463,7 @@
     "tumpak-sewu",
     "uluru-kata-tjuta",
     "universal-studios-japan",
+    "uyuni",
     "vaadhoo",
     "vallee-de-mai",
     "virunga-gorillas",
