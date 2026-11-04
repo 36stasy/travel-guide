@@ -395,6 +395,17 @@
         "Фарерские острова (Фареры)",
         "Салар-де-Уюни (Боливия)"
       ]
+    },
+    {
+      "date": "2026-11-04",
+      "ids": [
+        "gocta",
+        "vanuatu-yasur"
+      ],
+      "places": [
+        "Водопад Гокта и крепость Куэлап (Перу)",
+        "Вануату и Ясур (Вануату)"
+      ]
     }
   ],
   "sent": [
@@ -423,6 +434,7 @@
     "fakarava",
     "faroe",
     "geiranger-trolltunga",
+    "gocta",
     "great-barrier-reef",
     "ha-giang",
     "halong-lan-ha",
@@ -466,6 +478,7 @@
     "uyuni",
     "vaadhoo",
     "vallee-de-mai",
+    "vanuatu-yasur",
     "virunga-gorillas",
     "wadi-rum",
     "wulong-tiankeng",
