@@ -406,6 +406,17 @@
         "Водопад Гокта и крепость Куэлап (Перу)",
         "Вануату и Ясур (Вануату)"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "ids": [
+        "fiji-yasawa",
+        "lencois-maranhenses"
+      ],
+      "places": [
+        "Фиджи: Ясава и Тавеуни (Фиджи)",
+        "Ленсойс-Мараньенсес (Бразилия)"
+      ]
     }
   ],
   "sent": [
@@ -433,6 +444,7 @@
     "el-nido",
     "fakarava",
     "faroe",
+    "fiji-yasawa",
     "geiranger-trolltunga",
     "gocta",
     "great-barrier-reef",
@@ -445,6 +457,7 @@
     "komodo-padar",
     "la-digue",
     "ladakh",
+    "lencois-maranhenses",
     "lofoten",
     "lola-ya-bonobo",
     "lord-howe",
