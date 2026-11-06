@@ -417,6 +417,17 @@
         "Фиджи: Ясава и Тавеуни (Фиджи)",
         "Ленсойс-Мараньенсес (Бразилия)"
       ]
+    },
+    {
+      "date": "2026-11-06",
+      "ids": [
+        "samoa-to-sua",
+        "yakushima"
+      ],
+      "places": [
+        "Самоа и То-Суа (Самоа)",
+        "Якусима (Япония)"
+      ]
     }
   ],
   "sent": [
@@ -472,6 +483,7 @@
     "phong-nha-caves",
     "raja-ampat",
     "salalah",
+    "samoa-to-sua",
     "senja-tromso",
     "shanghai-disneyland",
     "sicily-etna",
@@ -495,6 +507,7 @@
     "virunga-gorillas",
     "wadi-rum",
     "wulong-tiankeng",
+    "yakushima",
     "zhangjiajie"
   ]
 }
