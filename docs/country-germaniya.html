@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Германия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a><i>→</i>Германия</div><div class="hero"><div class="country">Европа · 1 место</div><h1>Германия</h1></div><div class="grid"><a class="card" href="europa-park.html" data-region="parks" data-search="europa-park и rulantica europa-park германия семейный бизнес из деревни на пять тысяч человек, который построили, чтобы показывать покупателям свои аттракционы — а он вырос в парк, обыгрывающий disney по рейтингам одиннадцать лет подряд. парки развлечений"><div class="ph"><img src="https://images.unsplash.com/photo-1752762720285-2a54cbc49609?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Германия</div><h3>Europa-Park и Rulantica</h3><p class="lead">Семейный бизнес из деревни на пять тысяч человек, который построили, чтобы показывать покупателям свои аттракционы — а он вырос в парк, обыгрывающий Disney по рейтингам одиннадцать лет подряд.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>
