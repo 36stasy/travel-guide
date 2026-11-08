@@ -439,6 +439,17 @@
         "Europa-Park и Rulantica (Германия)",
         "Метеора (Греция)"
       ]
+    },
+    {
+      "date": "2026-11-08",
+      "ids": [
+        "maldives-hanifaru",
+        "perito-moreno"
+      ],
+      "places": [
+        "Атолл Баа и Ханифару (Мальдивы)",
+        "Эль-Калафате и Перито-Морено (Аргентина)"
+      ]
     }
   ],
   "sent": [
@@ -484,6 +495,7 @@
     "lofoten",
     "lola-ya-bonobo",
     "lord-howe",
+    "maldives-hanifaru",
     "matera",
     "maupiti",
     "meteora",
@@ -491,6 +503,7 @@
     "new-caledonia",
     "nusantara",
     "nyiragongo",
+    "perito-moreno",
     "petra",
     "phang-nga",
     "phong-nha-caves",
