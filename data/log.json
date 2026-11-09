@@ -450,6 +450,17 @@
         "Атолл Баа и Ханифару (Мальдивы)",
         "Эль-Калафате и Перито-Морено (Аргентина)"
       ]
+    },
+    {
+      "date": "2026-11-09",
+      "ids": [
+        "luang-prabang",
+        "plitvice-kotor"
+      ],
+      "places": [
+        "Луангпрабанг и Куангси (Лаос)",
+        "Плитвице и Бока Которская (Хорватия и Черногория)"
+      ]
     }
   ],
   "sent": [
@@ -495,6 +506,7 @@
     "lofoten",
     "lola-ya-bonobo",
     "lord-howe",
+    "luang-prabang",
     "maldives-hanifaru",
     "matera",
     "maupiti",
@@ -507,6 +519,7 @@
     "petra",
     "phang-nga",
     "phong-nha-caves",
+    "plitvice-kotor",
     "raja-ampat",
     "salalah",
     "samoa-to-sua",

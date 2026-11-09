@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Остальной мир — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i>Остальной мир</div><div class="hero"><div class="country">1 страна · 1 место</div><h1>Остальной мир</h1><p class="lead">Страны, которых пока нет в карте континентов.</p></div><h2 class="secthead">Страны</h2><div class="tiles"><a class="tile" href="country-horvatiya-i-chernogoriya.html"><b>Хорватия и Черногория</b><span>1 место</span></a></div><h2 class="secthead">Все места континента</h2><div class="tools"><input id="q" type="search" placeholder="Поиск по континенту: страна, место, слово…"></div><div class="grid"><a class="card" href="plitvice-kotor.html" data-region="europe" data-search="плитвице и бока которская plitvice lakes, bay of kotor хорватия и черногория в плитвицах шестнадцать озёр стоят одно над другим, и плотины между ними строят мох и бактерии — прямо сейчас, по сантиметру в год. в которском заливе горы в тысячу с лишним метров падают прямо в море. но визовые правила для россиян в 2026 году поменялись, и это надо знать до билетов. европа"><div class="ph"><img src="https://images.unsplash.com/photo-1589312133722-eab40c686ebb?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Хорватия и Черногория</div><h3>Плитвице и Бока Которская</h3><p class="lead">В Плитвицах шестнадцать озёр стоят одно над другим, и плотины между ними строят мох и бактерии — прямо сейчас, по сантиметру в год. В Которском заливе горы в тысячу с лишним метров падают прямо в море. Но визовые правила для россиян в 2026 году поменялись, и это надо знать до билетов.</p></div></a></div><div class="empty" id="empty" style="display:none">Ничего не нашлось</div><div class="crumbs"><a href="index.html">весь гайд</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+
+const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],
+      chips=[...document.querySelectorAll('.chip')];
+let region='all';
+function apply(){
+  const t=(q?q.value:'').trim().toLowerCase();
+  let shown=0;
+  cards.forEach(c=>{
+    const okR=region==='all'||c.dataset.region===region;
+    const okT=!t||c.dataset.search.includes(t);
+    const ok=okR&&okT;
+    c.style.display=ok?'':'none';
+    if(ok)shown++;
+  });
+  const e=document.getElementById('empty');
+  if(e)e.style.display=shown?'none':'block';
+}
+if(q)q.addEventListener('input',apply);
+chips.forEach(ch=>ch.addEventListener('click',()=>{
+  chips.forEach(x=>x.classList.remove('on'));ch.classList.add('on');
+  region=ch.dataset.region;apply();
+}));
+</script>
+</body>
+</html>
