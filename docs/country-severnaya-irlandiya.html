@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Северная Ирландия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a><i>→</i>Северная Ирландия</div><div class="hero"><div class="country">Европа · 1 место</div><h1>Северная Ирландия</h1></div><div class="grid"><a class="card" href="ireland-giants.html" data-region="europe_north" data-search="тропа гигантов и антрим giant&#x27;s causeway северная ирландия берег, вымощенный десятками тысяч шестиугольных каменных столбов, так ровно, что кажется — это работа каменщика-великана. на самом деле её сделала остывающая лава, а легенда про великана финна рядом только добавляет колорита. северная европа и британия"><div class="ph"><img src="https://images.unsplash.com/photo-1565057386288-be45581ae226?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Северная Ирландия</div><h3>Тропа гигантов и Антрим</h3><p class="lead">Берег, вымощенный десятками тысяч шестиугольных каменных столбов, так ровно, что кажется — это работа каменщика-великана. На самом деле её сделала остывающая лава, а легенда про великана Финна рядом только добавляет колорита.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-europe.html">Европа</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

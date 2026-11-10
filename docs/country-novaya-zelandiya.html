@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Новая Зеландия — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-oceania.html">Австралия и Океания</a><i>→</i>Новая Зеландия</div><div class="hero"><div class="country">Австралия и Океания · 1 место</div><h1>Новая Зеландия</h1></div><div class="grid"><a class="card" href="nz-rotorua-waitomo.html" data-region="oceania" data-search="роторуа и вайтомо rotorua, waitomo новая зеландия под холмами вайтомо плывёшь в лодке в полной тишине, а над головой тысячи живых голубых огоньков — как млечный путь, только на потолке пещеры. а в часе езды на юг земля сама бьёт фонтанами и красит озёра в цвета, которых не бывает. австралия и океания"><div class="ph"><img src="https://images.unsplash.com/photo-1585607666104-4d5b201d6d8c?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Новая Зеландия</div><h3>Роторуа и Вайтомо</h3><p class="lead">Под холмами Вайтомо плывёшь в лодке в полной тишине, а над головой тысячи живых голубых огоньков — как Млечный Путь, только на потолке пещеры. А в часе езды на юг земля сама бьёт фонтанами и красит озёра в цвета, которых не бывает.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-oceania.html">Австралия и Океания</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

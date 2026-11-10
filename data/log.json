@@ -461,6 +461,17 @@
         "Луангпрабанг и Куангси (Лаос)",
         "Плитвице и Бока Которская (Хорватия и Черногория)"
       ]
+    },
+    {
+      "date": "2026-11-10",
+      "ids": [
+        "nz-rotorua-waitomo",
+        "ireland-giants"
+      ],
+      "places": [
+        "Роторуа и Вайтомо (Новая Зеландия)",
+        "Тропа гигантов и Антрим (Северная Ирландия)"
+      ]
     }
   ],
   "sent": [
@@ -497,6 +508,7 @@
     "halong-lan-ha",
     "iceland-highlands",
     "iguazu",
+    "ireland-giants",
     "jomblang-yogyakarta",
     "kimberley-bungle",
     "komodo-padar",
@@ -515,6 +527,7 @@
     "new-caledonia",
     "nusantara",
     "nyiragongo",
+    "nz-rotorua-waitomo",
     "perito-moreno",
     "petra",
     "phang-nga",
