@@ -472,6 +472,17 @@
         "Роторуа и Вайтомо (Новая Зеландия)",
         "Тропа гигантов и Антрим (Северная Ирландия)"
       ]
+    },
+    {
+      "date": "2026-11-11",
+      "ids": [
+        "mexico-yucatan-cenotes",
+        "finland-lapland"
+      ],
+      "places": [
+        "Юкатан: сеноты и Ушмаль (Мексика)",
+        "Лапландия и Нуорунен (Финляндия)"
+      ]
     }
   ],
   "sent": [
@@ -501,6 +512,7 @@
     "fakarava",
     "faroe",
     "fiji-yasawa",
+    "finland-lapland",
     "geiranger-trolltunga",
     "gocta",
     "great-barrier-reef",
@@ -523,6 +535,7 @@
     "matera",
     "maupiti",
     "meteora",
+    "mexico-yucatan-cenotes",
     "moorea",
     "new-caledonia",
     "nusantara",

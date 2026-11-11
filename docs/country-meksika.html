@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мексика — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-americas-north.html">Северная Америка</a><i>→</i>Мексика</div><div class="hero"><div class="country">Северная Америка · 1 место</div><h1>Мексика</h1></div><div class="grid"><a class="card" href="mexico-yucatan-cenotes.html" data-region="americas_north" data-search="юкатан: сеноты и ушмаль yucatán cenotes, uxmal мексика круглые провалы в известняке: сверху дыра с лучом солнца, вниз свисают корни деревьев до самой воды, а вода такая прозрачная, что плывёшь как будто по воздуху. и в часе-двух езды майянский город, где в будни можно остаться на площади одной. северная америка"><div class="ph"><img src="https://images.unsplash.com/photo-1719941463960-f3310fe64e46?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Мексика</div><h3>Юкатан: сеноты и Ушмаль</h3><p class="lead">Круглые провалы в известняке: сверху дыра с лучом солнца, вниз свисают корни деревьев до самой воды, а вода такая прозрачная, что плывёшь как будто по воздуху. И в часе-двух езды майянский город, где в будни можно остаться на площади одной.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-americas-north.html">Северная Америка</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>
