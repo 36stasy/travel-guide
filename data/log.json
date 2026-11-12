@@ -483,6 +483,17 @@
         "Юкатан: сеноты и Ушмаль (Мексика)",
         "Лапландия и Нуорунен (Финляндия)"
       ]
+    },
+    {
+      "date": "2026-11-12",
+      "ids": [
+        "jebel-shams",
+        "svalbard"
+      ],
+      "places": [
+        "Джебель-Шамс и Вади-Гуль (Оман)",
+        "Свальбард (Норвегия)"
+      ]
     }
   ],
   "sent": [
@@ -521,6 +532,7 @@
     "iceland-highlands",
     "iguazu",
     "ireland-giants",
+    "jebel-shams",
     "jomblang-yogyakarta",
     "kimberley-bungle",
     "komodo-padar",
@@ -555,6 +567,7 @@
     "son-doong",
     "sossusvlei",
     "sumba",
+    "svalbard",
     "tibet-everest-north",
     "tibet-kailash",
     "tibet-lhasa",
