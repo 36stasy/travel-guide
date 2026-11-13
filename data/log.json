@@ -494,6 +494,17 @@
         "Джебель-Шамс и Вади-Гуль (Оман)",
         "Свальбард (Норвегия)"
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "ids": [
+        "kilimanjaro",
+        "victoria-falls"
+      ],
+      "places": [
+        "Килиманджаро (Танзания)",
+        "Водопад Виктория (Зимбабве)"
+      ]
     }
   ],
   "sent": [
@@ -534,6 +545,7 @@
     "ireland-giants",
     "jebel-shams",
     "jomblang-yogyakarta",
+    "kilimanjaro",
     "kimberley-bungle",
     "komodo-padar",
     "la-digue",
@@ -582,6 +594,7 @@
     "vaadhoo",
     "vallee-de-mai",
     "vanuatu-yasur",
+    "victoria-falls",
     "virunga-gorillas",
     "wadi-rum",
     "wulong-tiankeng",
