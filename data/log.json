@@ -505,6 +505,17 @@
         "Килиманджаро (Танзания)",
         "Водопад Виктория (Зимбабве)"
       ]
+    },
+    {
+      "date": "2026-11-14",
+      "ids": [
+        "benagil",
+        "kaieteur-guyana"
+      ],
+      "places": [
+        "Пещера Бенажил (Португалия)",
+        "Кайетур и Гайана (Гайана)"
+      ]
     }
   ],
   "sent": [
@@ -517,6 +528,7 @@
     "bagan",
     "balabac",
     "belitung",
+    "benagil",
     "bohol-kawasan",
     "bora-bora",
     "cappadocia",
@@ -545,6 +557,7 @@
     "ireland-giants",
     "jebel-shams",
     "jomblang-yogyakarta",
+    "kaieteur-guyana",
     "kilimanjaro",
     "kimberley-bungle",
     "komodo-padar",
