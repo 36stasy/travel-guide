@@ -516,6 +516,17 @@
         "Пещера Бенажил (Португалия)",
         "Кайетур и Гайана (Гайана)"
       ]
+    },
+    {
+      "date": "2026-11-15",
+      "ids": [
+        "spotted-lake",
+        "semuc-champey"
+      ],
+      "places": [
+        "Пятнистое озеро Клилук (Канада)",
+        "Семук-Чампей (Гватемала)"
+      ]
     }
   ],
   "sent": [
@@ -586,11 +597,13 @@
     "raja-ampat",
     "salalah",
     "samoa-to-sua",
+    "semuc-champey",
     "senja-tromso",
     "shanghai-disneyland",
     "sicily-etna",
     "son-doong",
     "sossusvlei",
+    "spotted-lake",
     "sumba",
     "svalbard",
     "tibet-everest-north",
