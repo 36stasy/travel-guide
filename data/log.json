@@ -527,6 +527,17 @@
         "Пятнистое озеро Клилук (Канада)",
         "Семук-Чампей (Гватемала)"
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "ids": [
+        "mangystau",
+        "rio-celeste"
+      ],
+      "places": [
+        "Мангистау: Кызылкуп и Бозжыра (Казахстан)",
+        "Рио-Селесте (Коста-Рика)"
+      ]
     }
   ],
   "sent": [
@@ -580,6 +591,7 @@
     "lord-howe",
     "luang-prabang",
     "maldives-hanifaru",
+    "mangystau",
     "matera",
     "maupiti",
     "meteora",
@@ -595,6 +607,7 @@
     "phong-nha-caves",
     "plitvice-kotor",
     "raja-ampat",
+    "rio-celeste",
     "salalah",
     "samoa-to-sua",
     "semuc-champey",
