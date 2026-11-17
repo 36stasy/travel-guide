@@ -538,6 +538,17 @@
         "Мангистау: Кызылкуп и Бозжыра (Казахстан)",
         "Рио-Селесте (Коста-Рика)"
       ]
+    },
+    {
+      "date": "2026-11-17",
+      "ids": [
+        "madagascar-baobab",
+        "socotra"
+      ],
+      "places": [
+        "Аллея баобабов и Цинги (Мадагаскар)",
+        "Сокотра (Йемен)"
+      ]
     }
   ],
   "sent": [
@@ -590,6 +601,7 @@
     "lola-ya-bonobo",
     "lord-howe",
     "luang-prabang",
+    "madagascar-baobab",
     "maldives-hanifaru",
     "mangystau",
     "matera",
@@ -614,6 +626,7 @@
     "senja-tromso",
     "shanghai-disneyland",
     "sicily-etna",
+    "socotra",
     "son-doong",
     "sossusvlei",
     "spotted-lake",
