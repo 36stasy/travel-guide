@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сан-Томе и Принсипи — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-other.html">Остальной мир</a><i>→</i>Сан-Томе и Принсипи</div><div class="hero"><div class="country">Остальной мир · 1 место</div><h1>Сан-Томе и Принсипи</h1></div><div class="grid"><a class="card" href="sao-tome-principe.html" data-region="africa" data-search="сан-томе и принсипи: пику-кан-гранди pico cão grande, são tomé and príncipe сан-томе и принсипи из тропического леса вертикально торчит базальтовая игла: 370 метров над джунглями и ни одной горы рядом. вокруг - бывшие какао-плантации, чёрные пляжи и маленькая страна на экваторе, куда почти никто не доезжает. африка"><div class="ph"><img src="https://images.unsplash.com/photo-1521837095228-0acd6c1cf09a?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Сан-Томе и Принсипи</div><h3>Сан-Томе и Принсипи: Пику-Кан-Гранди</h3><p class="lead">Из тропического леса вертикально торчит базальтовая игла: 370 метров над джунглями и ни одной горы рядом. Вокруг - бывшие какао-плантации, чёрные пляжи и маленькая страна на экваторе, куда почти никто не доезжает.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-other.html">Остальной мир</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

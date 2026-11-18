@@ -549,6 +549,17 @@
         "Аллея баобабов и Цинги (Мадагаскар)",
         "Сокотра (Йемен)"
       ]
+    },
+    {
+      "date": "2026-11-18",
+      "ids": [
+        "lac-rose-retba",
+        "sao-tome-principe"
+      ],
+      "places": [
+        "Розовое озеро Ретба (Сенегал)",
+        "Сан-Томе и Принсипи: Пику-Кан-Гранди (Сан-Томе и Принсипи)"
+      ]
     }
   ],
   "sent": [
@@ -595,6 +606,7 @@
     "kimberley-bungle",
     "komodo-padar",
     "la-digue",
+    "lac-rose-retba",
     "ladakh",
     "lencois-maranhenses",
     "lofoten",
@@ -622,6 +634,7 @@
     "rio-celeste",
     "salalah",
     "samoa-to-sua",
+    "sao-tome-principe",
     "semuc-champey",
     "senja-tromso",
     "shanghai-disneyland",
