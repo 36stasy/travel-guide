@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Реюньон — гайд по путешествиям</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap"><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-other.html">Остальной мир</a><i>→</i>Реюньон</div><div class="hero"><div class="country">Остальной мир · 1 место</div><h1>Реюньон</h1></div><div class="grid"><a class="card" href="reunion-cirques.html" data-region="africa" data-search="реюньон: тру-де-фер и цирки réunion: trou de fer and the cirques реюньон остров размером с люксембург, где вулканы обвалились в зелёные чаши с отвесными стенами по километру, а в одной из них люди живут без единой дороги. сверху в эти чаши падают водопады, и самый странный из них падает в круглый колодец в лесу. африка"><div class="ph"><img src="https://images.unsplash.com/photo-1698625704696-fe1aea52e0ee?w=1600&amp;q=80&amp;fm=jpg&amp;fit=max" alt="" loading="lazy"></div><div class="body"><div class="country">Реюньон</div><h3>Реюньон: Тру-де-Фер и цирки</h3><p class="lead">Остров размером с Люксембург, где вулканы обвалились в зелёные чаши с отвесными стенами по километру, а в одной из них люди живут без единой дороги. Сверху в эти чаши падают водопады, и самый странный из них падает в круглый колодец в лесу.</p></div></a></div><div class="crumbs"><a href="index.html">весь гайд</a><i>→</i><a href="continent-other.html">Остальной мир</a></div></div>
+<div id="lb"><div><img alt=""><div class="cap"></div></div></div>
+<script>
+const lb=document.getElementById('lb');
+if(lb){
+  document.querySelectorAll('.gal img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      lb.querySelector('img').src=img.dataset.full||img.src;
+      lb.querySelector('.cap').textContent=img.alt||'';
+      lb.classList.add('on');
+    });
+  });
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+}
+</script>
+</body>
+</html>

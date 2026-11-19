@@ -560,6 +560,17 @@
         "Розовое озеро Ретба (Сенегал)",
         "Сан-Томе и Принсипи: Пику-Кан-Гранди (Сан-Томе и Принсипи)"
       ]
+    },
+    {
+      "date": "2026-11-19",
+      "ids": [
+        "reunion-cirques",
+        "palau-jellyfish"
+      ],
+      "places": [
+        "Реюньон: Тру-де-Фер и цирки (Реюньон)",
+        "Палау и озеро медуз (Палау)"
+      ]
     }
   ],
   "sent": [
@@ -625,12 +636,14 @@
     "nusantara",
     "nyiragongo",
     "nz-rotorua-waitomo",
+    "palau-jellyfish",
     "perito-moreno",
     "petra",
     "phang-nga",
     "phong-nha-caves",
     "plitvice-kotor",
     "raja-ampat",
+    "reunion-cirques",
     "rio-celeste",
     "salalah",
     "samoa-to-sua",
