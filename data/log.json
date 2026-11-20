@@ -571,6 +571,17 @@
         "Реюньон: Тру-де-Фер и цирки (Реюньон)",
         "Палау и озеро медуз (Палау)"
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "ids": [
+        "mauritius-chamarel",
+        "spiti"
+      ],
+      "places": [
+        "Маврикий: семицветные земли (Маврикий)",
+        "Спити (Индия)"
+      ]
     }
   ],
   "sent": [
@@ -629,6 +640,7 @@
     "mangystau",
     "matera",
     "maupiti",
+    "mauritius-chamarel",
     "meteora",
     "mexico-yucatan-cenotes",
     "moorea",
@@ -655,6 +667,7 @@
     "socotra",
     "son-doong",
     "sossusvlei",
+    "spiti",
     "spotted-lake",
     "sumba",
     "svalbard",
