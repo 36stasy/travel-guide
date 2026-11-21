@@ -582,12 +582,24 @@
         "Маврикий: семицветные земли (Маврикий)",
         "Спити (Индия)"
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "ids": [
+        "easter-island",
+        "alaska-kenai"
+      ],
+      "places": [
+        "Остров Пасхи (Чили)",
+        "Кенай-Фьордс и Сьюард (США)"
+      ]
     }
   ],
   "sent": [
     "aitutaki",
     "alaska-denali",
     "alaska-katmai",
+    "alaska-kenai",
     "alaska-wrangell",
     "angel-falls",
     "atacama",
@@ -607,6 +619,7 @@
     "dettifoss-hengifoss",
     "disneyland-paris",
     "dolomites",
+    "easter-island",
     "el-nido",
     "europa-park",
     "fakarava",
