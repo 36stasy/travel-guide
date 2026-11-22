@@ -593,6 +593,17 @@
         "Остров Пасхи (Чили)",
         "Кенай-Фьордс и Сьюард (США)"
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "ids": [
+        "ningaloo",
+        "mu-cang-chai"
+      ],
+      "places": [
+        "Нингалу (Австралия)",
+        "Сапа и Мукангчай (Вьетнам)"
+      ]
     }
   ],
   "sent": [
@@ -657,7 +668,9 @@
     "meteora",
     "mexico-yucatan-cenotes",
     "moorea",
+    "mu-cang-chai",
     "new-caledonia",
+    "ningaloo",
     "nusantara",
     "nyiragongo",
     "nz-rotorua-waitomo",
