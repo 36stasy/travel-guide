@@ -604,6 +604,15 @@
         "Нингалу (Австралия)",
         "Сапа и Мукангчай (Вьетнам)"
       ]
+    },
+    {
+      "date": "2026-11-23",
+      "ids": [
+        "yosemite"
+      ],
+      "places": [
+        "Йосемити (США)"
+      ]
     }
   ],
   "sent": [
@@ -716,6 +725,7 @@
     "wadi-rum",
     "wulong-tiankeng",
     "yakushima",
+    "yosemite",
     "zhangjiajie"
   ]
 }
